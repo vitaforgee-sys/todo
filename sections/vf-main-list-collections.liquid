@@ -1,0 +1,27 @@
+<section class="vf-section">
+  <div class="vf-wrap">
+    <header class="vf-head vf-head--center vf-reveal">
+      <h1>{{ page_title | escape }}</h1>
+      <hr class="vf-rule" style="margin-inline: auto;">
+    </header>
+
+    <div class="vf-products">
+      {%- for collection in collections -%}
+        <article class="vf-product-card vf-reveal">
+          <a href="{{ collection.url }}" class="vf-product-card__media" tabindex="-1" aria-hidden="true">
+            {%- if collection.featured_image -%}
+              {{ collection.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '300,600,900', alt: collection.title }}
+            {%- else -%}
+              <span class="vf-placeholder"></span>
+            {%- endif -%}
+          </a>
+          <h2 class="vf-product-card__title"><a href="{{ collection.url }}">{{ collection.title | escape }}</a></h2>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Lista de colecciones", "tag": "section", "settings": [] }
+{% endschema %}

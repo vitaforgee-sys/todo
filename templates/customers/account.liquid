@@ -1,0 +1,41 @@
+<section class="vf-section">
+  <div class="vf-wrap">
+    <header class="vf-head">
+      <h1>Hola, {{ customer.first_name | default: 'bienvenida' }}</h1>
+      <hr class="vf-rule">
+    </header>
+
+    <h2>Tus pedidos</h2>
+    {%- if customer.orders.size > 0 -%}
+      <div class="vf-table-wrap">
+        <table class="vf-table">
+          <thead>
+            <tr>
+              <th scope="col">Pedido</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for order in customer.orders -%}
+              <tr>
+                <th scope="row"><a href="{{ order.customer_url }}">{{ order.name }}</a></th>
+                <td>{{ order.created_at | date: '%d/%m/%Y' }}</td>
+                <td>{{ order.fulfillment_status_label }}</td>
+                <td>{{ order.total_price | money }}</td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+    {%- else -%}
+      <p>Todavia no has hecho ningun pedido.</p>
+    {%- endif -%}
+
+    <div class="vf-btn-row">
+      <a href="{{ routes.account_addresses_url }}" class="vf-btn vf-btn--outline">Mis direcciones</a>
+      <a href="{{ routes.account_logout_url }}" class="vf-btn vf-btn--outline">Cerrar sesion</a>
+    </div>
+  </div>
+</section>

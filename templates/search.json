@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "buscador": {
+      "type": "vf-main-search",
+      "settings": {}
+    }
+  },
+  "order": [
+    "buscador"
+  ]
+}

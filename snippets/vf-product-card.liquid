@@ -1,0 +1,40 @@
+{%- comment -%}
+  Tarjeta de producto para rejillas de coleccion.
+{%- endcomment -%}
+<article class="vf-product-card vf-reveal">
+  <a href="{{ card_product.url }}" class="vf-product-card__media" tabindex="-1" aria-hidden="true">
+    {%- if card_product.featured_image -%}
+      {{
+        card_product.featured_image
+        | image_url: width: 900
+        | image_tag:
+          loading: 'lazy',
+          sizes: '(min-width: 990px) 33vw, (min-width: 600px) 50vw, 100vw',
+          widths: '300,450,600,900',
+          alt: card_product.featured_image.alt | default: card_product.title
+      }}
+    {%- else -%}
+      <span class="vf-placeholder"></span>
+    {%- endif -%}
+  </a>
+
+  <h3 class="vf-product-card__title">
+    <a href="{{ card_product.url }}">{{ card_product.title | escape }}</a>
+  </h3>
+
+  {%- if card_product.metafields.custom.subtitulo != blank -%}
+    <p class="vf-quote__meta">{{ card_product.metafields.custom.subtitulo | escape }}</p>
+  {%- endif -%}
+
+  <div class="vf-product-card__price">
+    {%- if card_product.compare_at_price > card_product.price -%}
+      <s class="vf-price__compare">{{ card_product.compare_at_price | money }}</s>
+    {%- endif -%}
+    <strong>{{ card_product.price | money }}</strong>
+  </div>
+
+  <a href="{{ card_product.url }}" class="vf-btn vf-btn--outline">
+    Ver detalles
+    {%- render 'vf-icon', icon: 'arrow-right', size: 18 -%}
+  </a>
+</article>

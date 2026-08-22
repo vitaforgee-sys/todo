@@ -1,0 +1,26 @@
+<article class="vf-section">
+  <div class="vf-wrap vf-wrap--narrow vf-reveal">
+    <header class="vf-head">
+      <span class="vf-eyebrow">{{ article.published_at | date: '%d de %B de %Y' }}</span>
+      <h1>{{ article.title | escape }}</h1>
+      <hr class="vf-rule">
+      {%- if article.author != blank -%}
+        <p class="vf-quote__meta">Por {{ article.author | escape }}</p>
+      {%- endif -%}
+    </header>
+
+    {%- if article.image -%}
+      {%- render 'vf-media', image: article.image, ratio: 'wide', alt: article.title, sizes: '(min-width: 990px) 780px, 100vw' -%}
+    {%- endif -%}
+
+    <div class="vf-rte" style="margin-top: 2rem;">{{ article.content }}</div>
+
+    <div class="vf-btn-row">
+      <a href="{{ blog.url }}" class="vf-btn vf-btn--outline">Volver al diario</a>
+    </div>
+  </div>
+</article>
+
+{% schema %}
+{ "name": "Articulo", "tag": "section", "settings": [] }
+{% endschema %}

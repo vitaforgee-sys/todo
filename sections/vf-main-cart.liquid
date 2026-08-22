@@ -1,0 +1,95 @@
+<section class="vf-section">
+  <div class="vf-wrap">
+    <header class="vf-head vf-reveal">
+      <h1>Tu cesta</h1>
+      <hr class="vf-rule">
+    </header>
+
+    {%- if cart.item_count == 0 -%}
+      <div class="vf-empty">
+        <h2>Tu cesta esta vacia</h2>
+        <p>Todavia no has añadido nada. Empieza por aqui.</p>
+        <div class="vf-btn-row" style="justify-content: center;">
+          <a href="{{ routes.all_products_collection_url }}" class="vf-btn vf-btn--primary">Ver los productos</a>
+        </div>
+      </div>
+    {%- else -%}
+      <form action="{{ routes.cart_url }}" method="post" novalidate>
+        {%- for item in cart.items -%}
+          <div class="vf-cart-item">
+            <a href="{{ item.url }}" class="vf-cart-item__media" tabindex="-1" aria-hidden="true">
+              {%- if item.image -%}
+                {{ item.image | image_url: width: 300 | image_tag: loading: 'lazy', widths: '150,300', alt: item.title }}
+              {%- else -%}
+                <span class="vf-placeholder"></span>
+              {%- endif -%}
+            </a>
+
+            <div>
+              <h2 style="font-size: var(--vf-fs-lg); margin-bottom: 0.25rem;">
+                <a href="{{ item.url }}" style="text-decoration: none;">{{ item.product.title | escape }}</a>
+              </h2>
+              {%- unless item.variant.title contains 'Default' -%}
+                <p class="vf-quote__meta">{{ item.variant.title }}</p>
+              {%- endunless -%}
+              <p class="vf-quote__meta">{{ item.original_price | money }} por unidad</p>
+            </div>
+
+            <div class="vf-qty" data-vf-qty>
+              <button type="button" data-step="-1" aria-label="Quitar una unidad de {{ item.product.title | escape }}">&minus;</button>
+              <label for="vf-cart-qty-{{ item.index | plus: 1 }}" class="vf-visually-hidden">Cantidad</label>
+              <input
+                type="number"
+                id="vf-cart-qty-{{ item.index | plus: 1 }}"
+                name="updates[]"
+                value="{{ item.quantity }}"
+                min="0"
+                inputmode="numeric"
+              >
+              <button type="button" data-step="1" aria-label="Añadir una unidad de {{ item.product.title | escape }}">+</button>
+            </div>
+
+            <div style="font-weight: 600; white-space: nowrap;">
+              {{ item.final_line_price | money }}
+              <a href="{{ item.url_to_remove }}" style="display: block; font-weight: 400; font-size: var(--vf-fs-xs);">Quitar</a>
+            </div>
+          </div>
+        {%- endfor -%}
+
+        {%- if settings.show_cart_note -%}
+          <div class="vf-field" style="margin-top: 2rem; max-width: 34rem;">
+            <label for="vf-cart-note">¿Quieres dejarnos alguna indicacion para el pedido?</label>
+            <textarea id="vf-cart-note" name="note" class="vf-textarea">{{ cart.note }}</textarea>
+          </div>
+        {%- endif -%}
+
+        <div class="vf-cart-summary">
+          <div class="vf-cart-summary__row">
+            <span>Subtotal</span>
+            <span>{{ cart.total_price | money }}</span>
+          </div>
+          {%- if cart.total_discount > 0 -%}
+            <div class="vf-cart-summary__row">
+              <span>Descuentos</span>
+              <span>&minus;{{ cart.total_discount | money }}</span>
+            </div>
+          {%- endif -%}
+          <div class="vf-cart-summary__row vf-cart-summary__row--total">
+            <span>Total</span>
+            <span>{{ cart.total_price | money }}</span>
+          </div>
+          <p class="vf-quote__meta">IVA incluido. Los gastos de envio se calculan en el siguiente paso.</p>
+
+          <div style="display: grid; gap: 0.75rem; margin-top: 1.5rem;">
+            <button type="submit" name="update" class="vf-btn vf-btn--outline">Actualizar cesta</button>
+            <button type="submit" name="checkout" class="vf-btn vf-btn--primary">Finalizar compra</button>
+          </div>
+        </div>
+      </form>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Cesta", "tag": "section", "settings": [] }
+{% endschema %}

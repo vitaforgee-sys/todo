@@ -1,0 +1,124 @@
+<section class="vf-section vf-section--surface">
+  <div class="vf-wrap">
+    {%- render 'vf-section-head',
+      eyebrow: section.settings.eyebrow,
+      heading: section.settings.heading,
+      subheading: section.settings.subheading,
+      align: 'center'
+    -%}
+
+    <div class="vf-faq vf-reveal" data-vf-faq="{% if section.settings.one_at_a_time %}single{% else %}multi{% endif %}">
+      {%- for block in section.blocks -%}
+        {%- assign panel_id = 'vf-faq-' | append: section.id | append: '-' | append: forloop.index -%}
+        <div class="vf-faq__item" {{ block.shopify_attributes }}>
+          <h3 class="vf-mb-0">
+            <button
+              type="button"
+              class="vf-faq__q"
+              aria-expanded="false"
+              aria-controls="{{ panel_id }}"
+            >
+              <span>{{ block.settings.question | escape }}</span>
+              <span class="vf-faq__sign" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="vf-faq__a" id="{{ panel_id }}" data-open="false" role="region">
+            <div>{{ block.settings.answer }}</div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cta_text != blank -%}
+      <p class="vf-faq__cta vf-reveal">
+        {{ section.settings.cta_text }}
+        {%- if section.settings.cta_link != blank -%}
+          <a href="{{ section.settings.cta_link }}" class="vf-link-arrow">
+            {{ section.settings.cta_label | escape }}
+            {%- render 'vf-icon', icon: 'arrow-right', size: 18 -%}
+          </a>
+        {%- endif -%}
+      </p>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} Datos estructurados: Google puede mostrar estas preguntas en los resultados. {%- endcomment -%}
+  {%- if section.settings.enable_schema and section.blocks.size > 0 -%}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {%- for block in section.blocks -%}
+            {
+              "@type": "Question",
+              "name": {{ block.settings.question | strip_html | json }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ block.settings.answer | strip_html | json }}
+              }
+            }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        ]
+      }
+    </script>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Preguntas frecuentes",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetitulo", "default": "Resolvemos tus dudas" },
+    { "type": "text", "id": "heading", "label": "Titulo", "default": "Preguntas frecuentes" },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Entradilla",
+      "default": "<p>Las mismas que nos hacen por telefono cada semana. Si te queda alguna, escribenos: contestamos personas, no robots.</p>"
+    },
+    { "type": "checkbox", "id": "one_at_a_time", "label": "Abrir solo una respuesta a la vez", "default": true },
+    {
+      "type": "checkbox",
+      "id": "enable_schema",
+      "label": "Activar datos estructurados FAQ",
+      "default": true,
+      "info": "Ayuda a que Google muestre estas preguntas en los resultados de busqueda."
+    },
+    { "type": "richtext", "id": "cta_text", "label": "Texto final", "default": "<p>¿Te queda alguna duda?</p>" },
+    { "type": "text", "id": "cta_label", "label": "Enlace final", "default": "Escribenos y te respondemos" },
+    { "type": "url", "id": "cta_link", "label": "Destino del enlace" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Pregunta",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Pregunta" },
+        { "type": "richtext", "id": "answer", "label": "Respuesta" }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Preguntas frecuentes",
+      "blocks": [
+        { "type": "faq", "settings": { "question": "Tengo 58 años y ya estoy con la menopausia. ¿Es para mi?", "answer": "<p>Si. VitaForge esta formulado precisamente para esta etapa, tanto si estas en perimenopausia como si ya la has pasado. No es un tratamiento hormonal ni lo sustituye: es un aporte de nutrientes que el cuerpo absorbe y utiliza peor a partir de los 45.</p>" } },
+        { "type": "faq", "settings": { "question": "Estoy tomando medicacion. ¿Puedo tomarlo igualmente?", "answer": "<p>La mayoria de nuestras clientas toma alguna medicacion. Aun asi, si sigues un tratamiento cronico —sobre todo anticoagulantes, medicacion tiroidea o para la tension— enseñale la tabla de composicion a tu medico o farmaceutico antes de empezar. Puedes descargarla e imprimirla desde la ficha del producto.</p>" } },
+        { "type": "faq", "settings": { "question": "¿Cuanto tarda en notarse?", "answer": "<p>Depende de cada persona y de tu punto de partida. Lo habitual es notar los primeros cambios en el descanso y la energia entre la tercera y la sexta semana; en piel, pelo y articulaciones suele hacer falta entre 8 y 12 semanas. Por eso la garantia es de 60 dias: para que te de tiempo a juzgarlo con criterio.</p>" } },
+        { "type": "faq", "settings": { "question": "¿Tiene efectos secundarios? ¿Voy a engordar?", "answer": "<p>No engorda: no aporta calorias relevantes ni hormonas. Algunas personas notan molestias digestivas leves los primeros dias, sobre todo si lo toman en ayunas; se resuelve tomandolo con el desayuno. Si aparece cualquier reaccion que no esperabas, deja de tomarlo y consulta con tu medico.</p>" } },
+        { "type": "faq", "settings": { "question": "¿Son pastillas grandes? Me cuesta tragarlas.", "answer": "<p>Es una capsula vegetal de tamaño 0, mas pequeña que la mayoria de los complementos de colageno del mercado. Si aun asi te cuesta, puedes abrirla y disolver el contenido en un yogur o en el cafe con leche: no pierde eficacia.</p>" } },
+        { "type": "faq", "settings": { "question": "¿Cuanto cuesta el envio y cuando me llega?", "answer": "<p>El envio es gratuito a partir de 49 € a toda España peninsular y cuesta 3,95 € por debajo de esa cantidad. Los pedidos hechos antes de las 14:00 de lunes a viernes salen el mismo dia y suelen llegar en 24-48 h. Baleares, Canarias, Ceuta y Melilla tienen plazos y tarifas propias que veras en el carrito.</p>" } },
+        { "type": "faq", "settings": { "question": "Prefiero no comprar por internet. ¿Puedo llamar por telefono?", "answer": "<p>Claro. Puedes hacer el pedido por telefono con una persona del equipo, de lunes a viernes de 9:00 a 18:00. Tambien puedes escribirnos por WhatsApp si te resulta mas comodo. Encontraras el numero en el pie de esta pagina.</p>" } },
+        { "type": "faq", "settings": { "question": "¿Es seguro pagar aqui con mi tarjeta?", "answer": "<p>Si. El pago se procesa mediante pasarela cifrada y nosotros nunca vemos ni guardamos los datos de tu tarjeta. Puedes pagar con tarjeta, Bizum, PayPal o transferencia. Tambien puedes elegir contrareembolso si prefieres pagar al recibirlo.</p>" } },
+        { "type": "faq", "settings": { "question": "Si no me convence, ¿que tengo que hacer para devolverlo?", "answer": "<p>Escribirnos un correo. Nada mas. Dispones de 60 dias desde la entrega, aunque hayas abierto el bote y te lo hayas tomado casi entero. Te devolvemos el importe integro y no tienes que dar explicaciones ni rellenar formularios.</p>" } },
+        { "type": "faq", "settings": { "question": "¿Me van a cobrar todos los meses sin darme cuenta?", "answer": "<p>No. Aqui no hay suscripciones automaticas ni letra pequeña: compras un bote y pagas un bote. Si algun dia quieres recibirlo periodicamente, tendras que activarlo tu de forma expresa y podras cancelarlo con un clic.</p>" } },
+        { "type": "faq", "settings": { "question": "¿Donde se fabrica y quien lo controla?", "answer": "<p>Se formula y se fabrica en España, en un laboratorio con certificacion GMP e inscrito en el registro sanitario de la AESAN. Cada lote pasa un analisis de composicion, metales pesados y microbiologia; puedes pedirnos el certificado de tu lote indicandonos el numero impreso en el bote.</p>" } },
+        { "type": "faq", "settings": { "question": "¿Lleva soja, gluten o lactosa? Soy alergica.", "answer": "<p>La formula contiene isoflavonas procedentes de soja, asi que no es apta si tienes alergia a la soja. No contiene gluten, lactosa, huevo ni frutos secos. Tienes el listado completo de ingredientes y alergenos en la tabla de composicion de esta misma pagina.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

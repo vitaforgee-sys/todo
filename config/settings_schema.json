@@ -1,0 +1,127 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "VitaForge",
+    "theme_version": "1.0.0",
+    "theme_author": "VitaForge",
+    "theme_documentation_url": "https://shopify.dev",
+    "theme_support_url": "https://shopify.dev"
+  },
+  {
+    "name": "Marca",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logotipo",
+        "info": "PNG o SVG con fondo transparente. Altura recomendada: 92 px."
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 80,
+        "max": 260,
+        "step": 10,
+        "unit": "px",
+        "label": "Ancho del logotipo",
+        "default": 150
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "Imagen cuadrada de 32 x 32 px."
+      }
+    ]
+  },
+  {
+    "name": "Color",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Fondo (crema)",
+        "default": "#faf6f0"
+      },
+      {
+        "type": "color",
+        "id": "color_sand",
+        "label": "Arena (bloques suaves)",
+        "default": "#efe7db"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Texto",
+        "default": "#241f1b"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Acento (botones y enlaces)",
+        "default": "#8f5533",
+        "info": "Contraste minimo AA sobre el fondo crema."
+      },
+      {
+        "type": "color",
+        "id": "color_deep",
+        "label": "Verde profundo (pie y bloques oscuros)",
+        "default": "#33403a"
+      },
+      {
+        "type": "color",
+        "id": "color_gold",
+        "label": "Dorado (estrellas y sellos)",
+        "default": "#b98d33"
+      }
+    ]
+  },
+  {
+    "name": "Tipografia",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Titulares",
+        "default": "playfair_display_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Texto",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "range",
+        "id": "base_font_size",
+        "min": 16,
+        "max": 22,
+        "step": 1,
+        "unit": "px",
+        "label": "Tamaño del texto base",
+        "default": 18,
+        "info": "18 px o mas facilita la lectura al publico de mas de 50 años."
+      }
+    ]
+  },
+  {
+    "name": "Redes sociales",
+    "settings": [
+      { "type": "text", "id": "social_instagram", "label": "Instagram (URL)" },
+      { "type": "text", "id": "social_facebook", "label": "Facebook (URL)" },
+      { "type": "text", "id": "social_youtube", "label": "YouTube (URL)" },
+      { "type": "text", "id": "social_tiktok", "label": "TikTok (URL)" }
+    ]
+  },
+  {
+    "name": "Carrito",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_cart_note",
+        "label": "Permitir nota del pedido",
+        "default": true
+      }
+    ]
+  }
+]

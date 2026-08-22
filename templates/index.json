@@ -1,0 +1,723 @@
+{
+  "sections": {
+    "hero": {
+      "type": "vf-hero",
+      "settings": {
+        "eyebrow": "Formulado en España para mujeres de 45 a 65",
+        "heading": "Duermes, pero amaneces cansada. <em>No es la edad.</em>",
+        "subheading": "<p>A partir de los 50 el cuerpo deja de producir lo que antes le sobraba: colageno, magnesio, defensas frente al desgaste. VitaForge repone justo eso, en una sola toma al dia.</p>",
+        "image_alt": "Mujer de unos 55 años sonriendo en la cocina de su casa con luz natural",
+        "cta_text": "Quiero recuperar mi energia",
+        "cta2_text": "Ver la formula completa",
+        "reassurance": "<p>Envio en 24-48 h · 60 dias de garantia de devolucion · Atencion por telefono y WhatsApp</p>",
+        "show_rating": true,
+        "rating_score": "4,8",
+        "rating_text": "4,8/5 segun nuestras clientas verificadas"
+      },
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Formula completa: activos en dosis reales, no simbolicas."
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Una sola toma al dia, con el desayuno. Sin pastilleros."
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "Fabricado en España y analizado lote a lote."
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "text": "60 dias para probarlo con garantia de devolucion."
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4"
+      ]
+    },
+    "confianza": {
+      "type": "vf-trust-bar",
+      "settings": {},
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "icon": "flask",
+            "text": "Fabricado en España bajo norma GMP"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "icon": "seal",
+            "text": "Analizado lote a lote en laboratorio"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "text": "Envio en 24-48 h, gratis desde 49 €"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "text": "60 dias de garantia de devolucion"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ]
+    },
+    "dolor": {
+      "type": "vf-pain-points",
+      "settings": {
+        "eyebrow": "Hablemos claro",
+        "heading": "¿Te reconoces en alguna de estas frases?",
+        "subheading": "<p>Si has llegado hasta aqui, probablemente si. Y probablemente tambien te han dicho alguna vez que es lo que toca a tu edad.</p>",
+        "closing": "<p>Nada de esto es simplemente la edad. Detras hay un cambio hormonal real, documentado y medible. Y hay mucho que puedes hacer al respecto.</p>",
+        "cta_text": "Ver que contiene VitaForge",
+        "cta_link": "/collections/all"
+      },
+      "blocks": {
+        "pain_1": {
+          "type": "pain",
+          "settings": {
+            "title": "Duermes, pero amaneces agotada.",
+            "text": "<p>Te acuestas pronto y aun asi el despertador te pilla sin fuerzas. No es pereza: es un descanso que ya no repara como antes.</p>"
+          }
+        },
+        "pain_2": {
+          "type": "pain",
+          "settings": {
+            "title": "Los sofocos llegan sin avisar.",
+            "text": "<p>En una reunion, en el supermercado, a las tres de la madrugada. Y cuesta explicar a los demas lo que supone.</p>"
+          }
+        },
+        "pain_3": {
+          "type": "pain",
+          "settings": {
+            "title": "Te crujen las rodillas al levantarte.",
+            "text": "<p>Esa rigidez de los primeros diez minutos de la mañana que hace cinco años sencillamente no existia.</p>"
+          }
+        },
+        "pain_4": {
+          "type": "pain",
+          "settings": {
+            "title": "Se te va el nombre a media frase.",
+            "text": "<p>La llaman niebla mental. Tu solo sabes que antes no te pasaba, y que te da rabia y un poco de miedo.</p>"
+          }
+        },
+        "pain_5": {
+          "type": "pain",
+          "settings": {
+            "title": "El espejo te devuelve otra piel.",
+            "text": "<p>Mas fina, mas apagada, y un pelo que se queda en el cepillo mas de lo que te gustaria.</p>"
+          }
+        },
+        "pain_6": {
+          "type": "pain",
+          "settings": {
+            "title": "Comes igual y el cuerpo cambia.",
+            "text": "<p>La misma dieta de siempre y, aun asi, una barriga que aparece sin haber cambiado nada.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "pain_1",
+        "pain_2",
+        "pain_3",
+        "pain_4",
+        "pain_5",
+        "pain_6"
+      ]
+    },
+    "producto": {
+      "type": "vf-featured-product",
+      "settings": {
+        "flip": true,
+        "eyebrow": "El producto",
+        "heading": "Todo lo que tu cuerpo echa de menos, en una capsula",
+        "text": "<p>Trece activos en dosis reales, pensados para lo que cambia en el cuerpo de una mujer a partir de los 45. Una toma al dia y la tabla de composicion completa a la vista, para que puedas enseñarsela a tu medico.</p>",
+        "unit_label": "Menos de 1 € al dia",
+        "button": "Añadir a la cesta"
+      }
+    },
+    "beneficios": {
+      "type": "vf-benefits",
+      "settings": {
+        "eyebrow": "Por que funciona",
+        "heading": "Cuatro frentes, una sola capsula",
+        "subheading": "<p>En lugar de tomar cuatro botes distintos, VitaForge cubre en una sola formula lo que el cuerpo deja de producir a partir de los 45.</p>",
+        "columns": "4"
+      },
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "spark",
+            "title": "Energia que llega a la tarde",
+            "text": "<p>Magnesio, hierro y vitaminas del grupo B contribuyen a disminuir el cansancio y la fatiga.</p>"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "bone",
+            "title": "Huesos y articulaciones",
+            "text": "<p>Vitamina D3, K2 y colageno para el mantenimiento de los huesos en condiciones normales.</p>"
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "leaf",
+            "title": "Piel, pelo y uñas",
+            "text": "<p>Vitamina C, zinc y colageno: la vitamina C contribuye a la formacion normal de colageno para la piel.</p>"
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "moon",
+            "title": "Equilibrio del dia a dia",
+            "text": "<p>La vitamina B6 contribuye a regular la actividad hormonal y el magnesio al sistema nervioso normal.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4"
+      ]
+    },
+    "composicion": {
+      "type": "vf-formula-table",
+      "settings": {
+        "eyebrow": "Transparencia total",
+        "heading": "Que contiene exactamente cada dosis diaria",
+        "subheading": "<p>Sin mezclas propietarias ni cantidades escondidas. Esto es todo lo que tomas cada mañana, con su dosis exacta y para que sirve.</p>",
+        "align": "center",
+        "col_1": "Ingrediente",
+        "col_2": "Por dosis diaria",
+        "col_3": "% VRN",
+        "col_4": "Para que sirve",
+        "note": "<p>VRN: valores de referencia de nutrientes segun el Reglamento (UE) 1169/2011. Dosis diaria: 2 capsulas. Las declaraciones recogidas en esta tabla son las autorizadas por la Union Europea para cada nutriente.</p>",
+        "other_ingredients": "Agente de recubrimiento (hidroxipropilmetilcelulosa, capsula vegetal), antiaglomerante (sales de magnesio de acidos grasos). Sin gluten, sin lactosa, sin azucares añadidos y sin colorantes artificiales.",
+        "cta_text": "Quiero probarlo 60 dias sin riesgo",
+        "cta_link": "/collections/all"
+      },
+      "blocks": {
+        "ingredient_1": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Colageno hidrolizado (tipo I y III)",
+            "amount": "5.000 mg",
+            "nrv": "—",
+            "benefit": "Aporta peptidos de colageno de bajo peso molecular"
+          }
+        },
+        "ingredient_2": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Magnesio (bisglicinato)",
+            "amount": "300 mg",
+            "nrv": "80 %",
+            "benefit": "Contribuye a disminuir el cansancio y la fatiga y al funcionamiento normal del sistema nervioso"
+          }
+        },
+        "ingredient_3": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Vitamina C (ascorbato calcico)",
+            "amount": "160 mg",
+            "nrv": "200 %",
+            "benefit": "Contribuye a la formacion normal de colageno para el funcionamiento normal de la piel, los huesos y los cartilagos"
+          }
+        },
+        "ingredient_4": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Acido hialuronico",
+            "amount": "100 mg",
+            "nrv": "—",
+            "benefit": "Componente natural de la piel y del liquido sinovial"
+          }
+        },
+        "ingredient_5": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Isoflavonas de soja",
+            "amount": "40 mg",
+            "nrv": "—",
+            "benefit": "Extracto vegetal estandarizado al 40 % en isoflavonas"
+          }
+        },
+        "ingredient_6": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Hierro (bisglicinato)",
+            "amount": "14 mg",
+            "nrv": "100 %",
+            "benefit": "Contribuye a disminuir el cansancio y la fatiga y a la formacion normal de globulos rojos"
+          }
+        },
+        "ingredient_7": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Zinc (bisglicinato)",
+            "amount": "10 mg",
+            "nrv": "100 %",
+            "benefit": "Contribuye al mantenimiento del cabello, las uñas y la piel en condiciones normales"
+          }
+        },
+        "ingredient_8": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Vitamina B6 (P-5-P)",
+            "amount": "1,4 mg",
+            "nrv": "100 %",
+            "benefit": "Contribuye a regular la actividad hormonal"
+          }
+        },
+        "ingredient_9": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Vitamina D3 (colecalciferol vegetal)",
+            "amount": "25 µg",
+            "nrv": "500 %",
+            "benefit": "Contribuye al mantenimiento de los huesos y la funcion muscular en condiciones normales"
+          }
+        },
+        "ingredient_10": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Vitamina K2 (MK-7)",
+            "amount": "75 µg",
+            "nrv": "100 %",
+            "benefit": "Contribuye al mantenimiento de los huesos en condiciones normales"
+          }
+        },
+        "ingredient_11": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Acido folico (metilfolato)",
+            "amount": "200 µg",
+            "nrv": "100 %",
+            "benefit": "Contribuye a la funcion psicologica normal"
+          }
+        },
+        "ingredient_12": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Selenio (L-selenometionina)",
+            "amount": "55 µg",
+            "nrv": "100 %",
+            "benefit": "Contribuye a la proteccion de las celulas frente al daño oxidativo"
+          }
+        },
+        "ingredient_13": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Vitamina B12 (metilcobalamina)",
+            "amount": "2,5 µg",
+            "nrv": "100 %",
+            "benefit": "Contribuye al metabolismo energetico normal"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_1",
+        "ingredient_2",
+        "ingredient_3",
+        "ingredient_4",
+        "ingredient_5",
+        "ingredient_6",
+        "ingredient_7",
+        "ingredient_8",
+        "ingredient_9",
+        "ingredient_10",
+        "ingredient_11",
+        "ingredient_12",
+        "ingredient_13"
+      ]
+    },
+    "modo_empleo": {
+      "type": "vf-steps",
+      "settings": {
+        "eyebrow": "Modo de empleo",
+        "heading": "Tan sencillo que no lo olvidaras",
+        "subheading": "<p>Sin horarios imposibles ni cinco botes en la encimera.</p>",
+        "note": "<p>No superar la dosis diaria recomendada. Los complementos alimenticios no deben utilizarse como sustitutos de una dieta equilibrada.</p>"
+      },
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Dos capsulas con el desayuno",
+            "text": "<p>Con un vaso de agua y algo de comida. La grasa del desayuno ayuda a absorber la vitamina D3 y la K2.</p>"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Todos los dias, sin saltarte ninguno",
+            "text": "<p>La constancia importa mas que la dosis. Deja el bote a la vista, junto a la cafetera.</p>"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Dale entre 8 y 12 semanas",
+            "text": "<p>El cuerpo necesita tiempo para reponer reservas. Por eso la garantia es de 60 dias y no de siete.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ]
+    },
+    "testimonios": {
+      "type": "vf-testimonials",
+      "settings": {
+        "eyebrow": "Lo que nos cuentan",
+        "heading": "Mujeres como tu, con nombre y apellido",
+        "subheading": "<p>Opiniones recogidas de clientas que compraron en esta tienda. Publicamos las buenas y tambien las que no lo son tanto.</p>",
+        "show_stars": true
+      },
+      "blocks": {
+        "quote_1": {
+          "type": "quote",
+          "settings": {
+            "name": "Maria Jose",
+            "meta": "56 años · Valencia",
+            "verified": true,
+            "quote": "<p>Lo que mas he notado es que llego a las siete de la tarde con ganas de algo mas que del sofa. Llevo tres meses y ya no me planteo dejarlo.</p>"
+          }
+        },
+        "quote_2": {
+          "type": "quote",
+          "settings": {
+            "name": "Carmen",
+            "meta": "61 años · Sevilla",
+            "verified": true,
+            "quote": "<p>Lo empece por las rodillas por la mañana. A la sexta semana me di cuenta de que ya no me acordaba de que me dolian.</p>"
+          }
+        },
+        "quote_3": {
+          "type": "quote",
+          "settings": {
+            "name": "Pilar",
+            "meta": "52 años · Bilbao",
+            "verified": true,
+            "quote": "<p>Agradezco muchisimo que pongan la tabla con las cantidades. Se la enseñe a mi medico de cabecera y me dijo que le parecia bien.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "quote_1",
+        "quote_2",
+        "quote_3"
+      ]
+    },
+    "comparativa": {
+      "type": "vf-comparison",
+      "settings": {
+        "eyebrow": "Compara sin prisa",
+        "heading": "En que se diferencia de lo que ya has probado",
+        "col_us": "VitaForge",
+        "col_them_1": "Multivitaminico de supermercado",
+        "col_them_2": "Colageno en polvo generico"
+      },
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "us": "si",
+            "them_1": "no",
+            "them_2": "no",
+            "feature": "Formulado para mujeres de 45 a 65"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "us": "si",
+            "them_1": "no",
+            "them_2": "no",
+            "feature": "Dosis completa de magnesio y vitamina D3"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "us": "si",
+            "them_1": "no",
+            "them_2": "si",
+            "feature": "Cantidades visibles de cada ingrediente"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "us": "si",
+            "them_1": "no",
+            "them_2": "no",
+            "feature": "Analisis de laboratorio por lote"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "us": "1",
+            "them_1": "1",
+            "them_2": "1 batido",
+            "feature": "Tomas al dia"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "us": "si",
+            "them_1": "no",
+            "them_2": "no",
+            "feature": "Fabricado en España"
+          }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "us": "60 dias",
+            "them_1": "14 dias",
+            "them_2": "14 dias",
+            "feature": "Garantia de devolucion"
+          }
+        },
+        "row_8": {
+          "type": "row",
+          "settings": {
+            "us": "si",
+            "them_1": "no",
+            "them_2": "no",
+            "feature": "Atencion por telefono con una persona"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7",
+        "row_8"
+      ]
+    },
+    "historia": {
+      "type": "vf-split",
+      "settings": {
+        "ratio": "square",
+        "flip": false,
+        "heading": "Pensado para una mujer concreta, no para todo el mundo",
+        "background": "cream",
+        "eyebrow": "Nuestra historia",
+        "text": "<p>VitaForge no nacio en una sala de reuniones. Nacio de escuchar a mujeres de 50 a 60 años decir siempre lo mismo: que se sentian invisibles en la consulta, que les recetaban paciencia y que ninguna formula del mercado estaba pensada de verdad para ellas.</p><p>Asi que hicimos lo contrario: elegimos primero a quien queriamos ayudar y despues construimos la formula. Cada ingrediente esta ahi por una razon concreta, en la dosis que la evidencia respalda.</p>"
+      },
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "<p>Formulado y fabricado en España bajo norma GMP.</p>"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "<p>Certificado de analisis disponible para cada lote.</p>"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "<p>Sin suscripciones trampa: compras cuando quieres.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3"
+      ]
+    },
+    "garantia": {
+      "type": "vf-guarantee",
+      "settings": {
+        "eyebrow": "Sin riesgo para ti",
+        "heading": "60 dias para probarlo. O te devolvemos el dinero.",
+        "text": "<p>Pruebalo dos meses enteros. Si al terminar el bote no notas la diferencia, escribenos un correo y te devolvemos el importe integro. Sin formularios, sin devolver el envase y sin tener que justificarte.</p>",
+        "cta_text": "Empezar sin riesgo",
+        "cta_link": "/collections/all"
+      }
+    },
+    "faq": {
+      "type": "vf-faq",
+      "settings": {
+        "eyebrow": "Resolvemos tus dudas",
+        "heading": "Preguntas frecuentes",
+        "subheading": "<p>Las mismas que nos hacen por telefono cada semana. Si te queda alguna, escribenos: contestamos personas, no robots.</p>",
+        "one_at_a_time": true,
+        "enable_schema": true,
+        "cta_text": "<p>¿Te queda alguna duda?</p>",
+        "cta_label": "Escribenos y te respondemos",
+        "cta_link": "/pages/contacto"
+      },
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Tengo 58 años y ya estoy con la menopausia. ¿Es para mi?",
+            "answer": "<p>Si. VitaForge esta formulado precisamente para esta etapa, tanto si estas en perimenopausia como si ya la has pasado. No es un tratamiento hormonal ni lo sustituye: es un aporte de nutrientes que el cuerpo absorbe y utiliza peor a partir de los 45.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Estoy tomando medicacion. ¿Puedo tomarlo igualmente?",
+            "answer": "<p>La mayoria de nuestras clientas toma alguna medicacion. Aun asi, si sigues un tratamiento cronico —sobre todo anticoagulantes, medicacion tiroidea o para la tension— enseñale la tabla de composicion a tu medico o farmaceutico antes de empezar. Puedes descargarla e imprimirla desde la ficha del producto.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuanto tarda en notarse?",
+            "answer": "<p>Depende de cada persona y de tu punto de partida. Lo habitual es notar los primeros cambios en el descanso y la energia entre la tercera y la sexta semana; en piel, pelo y articulaciones suele hacer falta entre 8 y 12 semanas. Por eso la garantia es de 60 dias: para que te de tiempo a juzgarlo con criterio.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Tiene efectos secundarios? ¿Voy a engordar?",
+            "answer": "<p>No engorda: no aporta calorias relevantes ni hormonas. Algunas personas notan molestias digestivas leves los primeros dias, sobre todo si lo toman en ayunas; se resuelve tomandolo con el desayuno. Si aparece cualquier reaccion que no esperabas, deja de tomarlo y consulta con tu medico.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Son pastillas grandes? Me cuesta tragarlas.",
+            "answer": "<p>Es una capsula vegetal de tamaño 0, mas pequeña que la mayoria de los complementos de colageno del mercado. Si aun asi te cuesta, puedes abrirla y disolver el contenido en un yogur o en el cafe con leche: no pierde eficacia.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuanto cuesta el envio y cuando me llega?",
+            "answer": "<p>El envio es gratuito a partir de 49 € a toda España peninsular y cuesta 3,95 € por debajo de esa cantidad. Los pedidos hechos antes de las 14:00 de lunes a viernes salen el mismo dia y suelen llegar en 24-48 h. Baleares, Canarias, Ceuta y Melilla tienen plazos y tarifas propias que veras en el carrito.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "Prefiero no comprar por internet. ¿Puedo llamar por telefono?",
+            "answer": "<p>Claro. Puedes hacer el pedido por telefono con una persona del equipo, de lunes a viernes de 9:00 a 18:00. Tambien puedes escribirnos por WhatsApp si te resulta mas comodo. Encontraras el numero en el pie de esta pagina.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Es seguro pagar aqui con mi tarjeta?",
+            "answer": "<p>Si. El pago se procesa mediante pasarela cifrada y nosotros nunca vemos ni guardamos los datos de tu tarjeta. Puedes pagar con tarjeta, Bizum, PayPal o transferencia. Tambien puedes elegir contrareembolso si prefieres pagar al recibirlo.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "Si no me convence, ¿que tengo que hacer para devolverlo?",
+            "answer": "<p>Escribirnos un correo. Nada mas. Dispones de 60 dias desde la entrega, aunque hayas abierto el bote y te lo hayas tomado casi entero. Te devolvemos el importe integro y no tienes que dar explicaciones ni rellenar formularios.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Me van a cobrar todos los meses sin darme cuenta?",
+            "answer": "<p>No. Aqui no hay suscripciones automaticas ni letra pequeña: compras un bote y pagas un bote. Si algun dia quieres recibirlo periodicamente, tendras que activarlo tu de forma expresa y podras cancelarlo con un clic.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Donde se fabrica y quien lo controla?",
+            "answer": "<p>Se formula y se fabrica en España, en un laboratorio con certificacion GMP e inscrito en el registro sanitario de la AESAN. Cada lote pasa un analisis de composicion, metales pesados y microbiologia; puedes pedirnos el certificado de tu lote indicandonos el numero impreso en el bote.</p>"
+          }
+        },
+        "faq_12": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Lleva soja, gluten o lactosa? Soy alergica.",
+            "answer": "<p>La formula contiene isoflavonas procedentes de soja, asi que no es apta si tienes alergia a la soja. No contiene gluten, lactosa, huevo ni frutos secos. Tienes el listado completo de ingredientes y alergenos en la tabla de composicion de esta misma pagina.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11",
+        "faq_12"
+      ]
+    },
+    "boletin": {
+      "type": "vf-newsletter",
+      "settings": {
+        "eyebrow": "Carta mensual",
+        "heading": "Lo que nos habria gustado que nos contaran a los 50",
+        "text": "<p>Una carta al mes con informacion util sobre menopausia, descanso, huesos y alimentacion. Escrita en cristiano y sin venderte nada en cada parrafo.</p>",
+        "button": "Quiero recibirla",
+        "legal": "<p>Responsable: VitaForge. Finalidad: enviarte nuestra carta mensual. Puedes darte de baja en cualquier momento desde el propio correo. Mas informacion en la politica de privacidad.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "confianza",
+    "dolor",
+    "producto",
+    "beneficios",
+    "composicion",
+    "modo_empleo",
+    "testimonios",
+    "comparativa",
+    "historia",
+    "garantia",
+    "faq",
+    "boletin"
+  ]
+}

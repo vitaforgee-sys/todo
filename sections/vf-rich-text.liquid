@@ -1,0 +1,55 @@
+<section class="vf-section{% if section.settings.background == 'sand' %} vf-section--sand{% elsif section.settings.background == 'surface' %} vf-section--surface{% endif %}">
+  <div class="vf-wrap vf-wrap--narrow vf-reveal{% if section.settings.align == 'center' %} vf-text-center{% endif %}">
+    {%- if section.settings.eyebrow != blank -%}
+      <span class="vf-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2>{{ section.settings.heading | escape }}</h2>
+      <hr class="vf-rule"{% if section.settings.align == 'center' %} style="margin-inline: auto;"{% endif %}>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <div class="vf-rte">{{ section.settings.text }}</div>
+    {%- endif -%}
+    {%- if section.settings.cta_text != blank -%}
+      <div class="vf-btn-row"{% if section.settings.align == 'center' %} style="justify-content: center;"{% endif %}>
+        <a href="{{ section.settings.cta_link }}" class="vf-btn vf-btn--primary">{{ section.settings.cta_text | escape }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Texto enriquecido",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetitulo" },
+    { "type": "text", "id": "heading", "label": "Titulo" },
+    { "type": "richtext", "id": "text", "label": "Texto" },
+    { "type": "text", "id": "cta_text", "label": "Boton" },
+    { "type": "url", "id": "cta_link", "label": "Enlace del boton" },
+    {
+      "type": "select",
+      "id": "align",
+      "label": "Alineacion",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centrado" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Fondo",
+      "options": [
+        { "value": "cream", "label": "Crema" },
+        { "value": "sand", "label": "Arena" },
+        { "value": "surface", "label": "Blanco" }
+      ],
+      "default": "cream"
+    }
+  ],
+  "presets": [{ "name": "Texto enriquecido" }]
+}
+{% endschema %}

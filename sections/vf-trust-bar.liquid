@@ -1,0 +1,56 @@
+<div class="vf-trust">
+  <div class="vf-wrap">
+    <div class="vf-trust__grid">
+      {%- for block in section.blocks -%}
+        <div class="vf-trust__item" {{ block.shopify_attributes }}>
+          {%- render 'vf-icon', icon: block.settings.icon, size: 30 -%}
+          <span>{{ block.settings.text | escape }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Barra de confianza",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Garantia",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icono",
+          "options": [
+            { "value": "flask", "label": "Laboratorio" },
+            { "value": "leaf", "label": "Hoja" },
+            { "value": "shield", "label": "Escudo" },
+            { "value": "truck", "label": "Envio" },
+            { "value": "seal", "label": "Sello" },
+            { "value": "clock", "label": "Reloj" },
+            { "value": "recycle", "label": "Reciclable" },
+            { "value": "heart", "label": "Corazon" }
+          ],
+          "default": "shield"
+        },
+        { "type": "text", "id": "text", "label": "Texto", "default": "Fabricado en España" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Barra de confianza",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "flask", "text": "Fabricado en España bajo norma GMP" } },
+        { "type": "item", "settings": { "icon": "seal", "text": "Analizado lote a lote en laboratorio" } },
+        { "type": "item", "settings": { "icon": "truck", "text": "Envio en 24-48 h, gratis desde 49 €" } },
+        { "type": "item", "settings": { "icon": "shield", "text": "60 dias de garantia de devolucion" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

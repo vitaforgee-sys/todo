@@ -1,0 +1,39 @@
+<section class="vf-section">
+  <div class="vf-wrap">
+    <header class="vf-head vf-head--center vf-reveal">
+      <span class="vf-eyebrow">Diario VitaForge</span>
+      <h1>{{ blog.title | escape }}</h1>
+      <hr class="vf-rule" style="margin-inline: auto;">
+    </header>
+
+    {%- paginate blog.articles by 9 -%}
+      <div class="vf-products">
+        {%- for article in blog.articles -%}
+          <article class="vf-product-card vf-reveal">
+            <a href="{{ article.url }}" class="vf-product-card__media" tabindex="-1" aria-hidden="true">
+              {%- if article.image -%}
+                {{ article.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '300,600,900', alt: article.title }}
+              {%- else -%}
+                <span class="vf-placeholder"></span>
+              {%- endif -%}
+            </a>
+            <p class="vf-quote__meta">{{ article.published_at | date: '%d de %B de %Y' }}</p>
+            <h2 class="vf-product-card__title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h2>
+            <p>{{ article.excerpt_or_content | strip_html | truncatewords: 26 }}</p>
+          </article>
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        <nav class="vf-btn-row" style="justify-content: center;" aria-label="Paginacion">
+          {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" class="vf-btn vf-btn--outline">Anterior</a>{%- endif -%}
+          {%- if paginate.next -%}<a href="{{ paginate.next.url }}" class="vf-btn vf-btn--outline">Siguiente</a>{%- endif -%}
+        </nav>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Blog", "tag": "section", "settings": [] }
+{% endschema %}

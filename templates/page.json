@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "pagina": {
+      "type": "vf-main-page",
+      "settings": {}
+    }
+  },
+  "order": [
+    "pagina"
+  ]
+}

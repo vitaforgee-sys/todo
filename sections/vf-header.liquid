@@ -1,0 +1,82 @@
+<header class="vf-header">
+  <div class="vf-wrap">
+    <div class="vf-header__inner">
+      <button
+        type="button"
+        class="vf-icon-btn vf-burger"
+        data-vf-menu-toggle
+        aria-controls="vf-mobile-nav"
+        aria-expanded="false"
+      >
+        {%- render 'vf-icon', icon: 'menu' -%}
+        <span class="vf-visually-hidden">Abrir menu</span>
+      </button>
+
+      <a href="{{ routes.root_url }}" class="vf-logo">
+        {%- if settings.logo != blank -%}
+          {{
+            settings.logo
+            | image_url: width: 600
+            | image_tag:
+              widths: '150,300,450,600',
+              alt: shop.name,
+              style: 'width:' | append: settings.logo_width | append: 'px'
+          }}
+        {%- else -%}
+          {{ shop.name }}
+        {%- endif -%}
+      </a>
+
+      <nav class="vf-nav" aria-label="Menu principal">
+        {%- for link in section.settings.menu.links -%}
+          <a
+            href="{{ link.url }}"
+            {% if link.active %}aria-current="page"{% endif %}
+          >{{ link.title | escape }}</a>
+        {%- endfor -%}
+      </nav>
+
+      <div class="vf-header__actions">
+        {%- if section.settings.show_search -%}
+          <a href="{{ routes.search_url }}" class="vf-icon-btn">
+            {%- render 'vf-icon', icon: 'search' -%}
+            <span class="vf-visually-hidden">Buscar</span>
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.show_account and shop.customer_accounts_enabled -%}
+          <a href="{{ routes.account_url }}" class="vf-icon-btn">
+            {%- render 'vf-icon', icon: 'user' -%}
+            <span class="vf-visually-hidden">Mi cuenta</span>
+          </a>
+        {%- endif -%}
+
+        <a href="{{ routes.cart_url }}" class="vf-icon-btn vf-cart-link">
+          {%- render 'vf-icon', icon: 'cart' -%}
+          <span class="vf-visually-hidden">Cesta</span>
+          {%- if cart.item_count > 0 -%}
+            <span class="vf-cart-count" aria-hidden="true">{{ cart.item_count }}</span>
+          {%- endif -%}
+        </a>
+      </div>
+    </div>
+
+    <nav class="vf-mobile-nav" id="vf-mobile-nav" data-open="false" aria-label="Menu movil">
+      {%- for link in section.settings.menu.links -%}
+        <a href="{{ link.url }}">{{ link.title | escape }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Cabecera",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "checkbox", "id": "show_search", "label": "Mostrar buscador", "default": true },
+    { "type": "checkbox", "id": "show_account", "label": "Mostrar cuenta", "default": true }
+  ],
+  "enabled_on": { "groups": ["header"] }
+}
+{% endschema %}

@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "coleccion": {
+      "type": "vf-main-collection",
+      "settings": {
+        "per_page": 12
+      }
+    },
+    "confianza": {
+      "type": "vf-trust-bar",
+      "settings": {},
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "icon": "flask",
+            "text": "Fabricado en España bajo norma GMP"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "icon": "seal",
+            "text": "Analizado lote a lote en laboratorio"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "text": "Envio en 24-48 h, gratis desde 49 €"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "text": "60 dias de garantia de devolucion"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ]
+    }
+  },
+  "order": [
+    "coleccion",
+    "confianza"
+  ]
+}

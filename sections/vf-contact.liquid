@@ -1,0 +1,101 @@
+<section class="vf-section">
+  <div class="vf-wrap">
+    <div class="vf-split">
+      <div class="vf-reveal">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="vf-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+        {%- endif -%}
+        <h2>{{ section.settings.heading | escape }}</h2>
+        <hr class="vf-rule">
+        {%- if section.settings.text != blank -%}
+          <div class="vf-rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        <ul class="vf-pdp__meta">
+          {%- if section.settings.phone != blank -%}
+            <li>
+              {%- render 'vf-icon', icon: 'check-circle', size: 21 -%}
+              <span>
+                Telefono:
+                <a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone }}</a>
+                {%- if section.settings.hours != blank %} ({{ section.settings.hours }}){% endif -%}
+              </span>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.email != blank -%}
+            <li>
+              {%- render 'vf-icon', icon: 'check-circle', size: 21 -%}
+              <span>Correo: <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></span>
+            </li>
+          {%- endif -%}
+          {%- if section.settings.whatsapp != blank -%}
+            <li>
+              {%- render 'vf-icon', icon: 'check-circle', size: 21 -%}
+              <span>WhatsApp: <a href="{{ section.settings.whatsapp }}" rel="noopener" target="_blank">escribenos por aqui</a></span>
+            </li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="vf-card vf-reveal">
+        {%- form 'contact' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="vf-alert vf-alert--ok">Gracias. Te respondemos en menos de 24 horas laborables.</p>
+          {%- elsif form.errors -%}
+            <p class="vf-alert vf-alert--error">{{ form.errors | default_errors }}</p>
+          {%- endif -%}
+
+          <div class="vf-field">
+            <label for="vf-contact-name">Tu nombre</label>
+            <input type="text" id="vf-contact-name" name="contact[name]" class="vf-input" autocomplete="name" required>
+          </div>
+          <div class="vf-field">
+            <label for="vf-contact-email">Tu correo electronico</label>
+            <input type="email" id="vf-contact-email" name="contact[email]" class="vf-input" autocomplete="email" required>
+          </div>
+          <div class="vf-field">
+            <label for="vf-contact-phone">Telefono (opcional)</label>
+            <input type="tel" id="vf-contact-phone" name="contact[phone]" class="vf-input" autocomplete="tel">
+          </div>
+          <div class="vf-field">
+            <label for="vf-contact-body">¿En que podemos ayudarte?</label>
+            <textarea id="vf-contact-body" name="contact[body]" class="vf-textarea" required></textarea>
+          </div>
+          <button type="submit" class="vf-btn vf-btn--primary vf-btn--full">Enviar mensaje</button>
+
+          {%- if section.settings.legal != blank -%}
+            <div class="vf-form-note" style="color: var(--vf-ink-soft);">{{ section.settings.legal }}</div>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contacto",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetitulo", "default": "Estamos al otro lado" },
+    { "type": "text", "id": "heading", "label": "Titulo", "default": "Escribenos o llamanos: te atiende una persona" },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texto",
+      "default": "<p>Si tienes dudas sobre la formula, sobre tu pedido o simplemente prefieres que te lo expliquen por telefono antes de comprar, estamos encantadas de atenderte.</p>"
+    },
+    { "type": "text", "id": "phone", "label": "Telefono", "default": "900 000 000" },
+    { "type": "text", "id": "hours", "label": "Horario", "default": "de lunes a viernes, de 9:00 a 18:00" },
+    { "type": "text", "id": "email", "label": "Correo electronico", "default": "hola@vitaforge.es" },
+    { "type": "url", "id": "whatsapp", "label": "Enlace de WhatsApp" },
+    {
+      "type": "richtext",
+      "id": "legal",
+      "label": "Aviso de privacidad",
+      "default": "<p>Responsable: VitaForge. Finalidad: responder a tu consulta. Puedes ejercer tus derechos de acceso, rectificacion y supresion escribiendo a la direccion indicada en la politica de privacidad.</p>"
+    }
+  ],
+  "presets": [{ "name": "Contacto" }]
+}
+{% endschema %}

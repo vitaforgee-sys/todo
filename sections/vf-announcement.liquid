@@ -1,0 +1,25 @@
+<div class="vf-announce">
+  <div class="vf-wrap">
+    {%- if section.settings.link != blank -%}
+      <a href="{{ section.settings.link }}">{{ section.settings.text | escape }}</a>
+    {%- else -%}
+      {{ section.settings.text | escape }}
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Barra de anuncio",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Mensaje",
+      "default": "Envio gratuito a partir de 49 € · Entrega en 24-48 h"
+    },
+    { "type": "url", "id": "link", "label": "Enlace (opcional)" }
+  ],
+  "enabled_on": { "groups": ["header"] }
+}
+{% endschema %}

@@ -1,0 +1,18 @@
+<section class="vf-section">
+  <div class="vf-wrap vf-wrap--narrow">
+    <header class="vf-head">
+      <h1>Mis direcciones</h1>
+      <hr class="vf-rule">
+    </header>
+
+    {%- paginate customer.addresses by 6 -%}
+      {%- for address in customer.addresses -%}
+        <div class="vf-card" style="margin-bottom: 1.5rem;">
+          {{ address | format_address }}
+        </div>
+      {%- endfor -%}
+    {%- endpaginate -%}
+
+    <p><a href="{{ routes.account_url }}" class="vf-link-arrow">Volver a mi cuenta</a></p>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "blog": {
+      "type": "vf-main-blog",
+      "settings": {}
+    }
+  },
+  "order": [
+    "blog"
+  ]
+}

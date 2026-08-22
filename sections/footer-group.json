@@ -1,0 +1,21 @@
+{
+  "name": "Pie de pagina",
+  "type": "footer",
+  "sections": {
+    "pie": {
+      "type": "vf-footer",
+      "settings": {
+        "tagline": "Complementos alimenticios formulados en España para acompañar a las mujeres a partir de los 45.",
+        "menu_1_title": "Tienda",
+        "menu_1": "footer",
+        "menu_2_title": "Ayuda",
+        "menu_2": "footer",
+        "show_newsletter": true,
+        "newsletter_title": "Carta mensual",
+        "newsletter_text": "Consejos de bienestar, menopausia y nutricion. Sin spam, cancela cuando quieras.",
+        "disclaimer": "Los complementos alimenticios no deben utilizarse como sustitutos de una dieta equilibrada y un estilo de vida saludable. No superar la dosis diaria recomendada. Mantener fuera del alcance de los niños. Si estas embarazada, en periodo de lactancia o tomas medicacion, consulta con tu medico o farmaceutico antes de tomar el producto."
+      }
+    }
+  },
+  "order": ["pie"]
+}

@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "error": {
+      "type": "vf-main-404",
+      "settings": {}
+    }
+  },
+  "order": [
+    "error"
+  ]
+}

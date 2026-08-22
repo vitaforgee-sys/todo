@@ -1,0 +1,148 @@
+{%- comment -%}
+  IMPORTANTE: los valores de esta tabla se editan bloque a bloque desde el
+  editor de temas. Sustituye los datos de ejemplo por los de la etiqueta real
+  del producto antes de publicar la tienda. La columna "Para que sirve" debe
+  usar unicamente declaraciones de propiedades saludables autorizadas por la
+  UE (Reglamento CE 1924/2006 y Reglamento UE 432/2012).
+{%- endcomment -%}
+
+<section class="vf-section vf-section--surface">
+  <div class="vf-wrap">
+    {%- render 'vf-section-head',
+      eyebrow: section.settings.eyebrow,
+      heading: section.settings.heading,
+      subheading: section.settings.subheading,
+      align: section.settings.align
+    -%}
+
+    <div class="vf-reveal">
+      <div class="vf-table-wrap">
+        <table class="vf-table">
+          <thead>
+            <tr>
+              <th scope="col">{{ section.settings.col_1 | escape }}</th>
+              <th scope="col">{{ section.settings.col_2 | escape }}</th>
+              <th scope="col">{{ section.settings.col_3 | escape }}</th>
+              <th scope="col">{{ section.settings.col_4 | escape }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for block in section.blocks -%}
+              <tr {{ block.shopify_attributes }}>
+                <th scope="row" style="font-weight: 600;">{{ block.settings.name | escape }}</th>
+                <td>{{ block.settings.amount | escape }}</td>
+                <td>{{ block.settings.nrv | escape }}</td>
+                <td>{{ block.settings.benefit | escape }}</td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+      <span class="vf-table-scroll-hint">Desliza la tabla hacia los lados para ver todas las columnas.</span>
+
+      {%- if section.settings.note != blank -%}
+        <div class="vf-table-note">{{ section.settings.note }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.other_ingredients != blank -%}
+        <div class="vf-table-note">
+          <strong>Otros ingredientes:</strong> {{ section.settings.other_ingredients }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.cta_text != blank -%}
+      <div class="vf-btn-row" {% if section.settings.align == 'center' %}style="justify-content: center;"{% endif %}>
+        <a href="{{ section.settings.cta_link }}" class="vf-btn vf-btn--primary">
+          {{ section.settings.cta_text | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tabla de composicion",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetitulo", "default": "Transparencia total" },
+    { "type": "text", "id": "heading", "label": "Titulo", "default": "Que contiene exactamente cada dosis diaria" },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Entradilla",
+      "default": "<p>Sin mezclas propietarias ni cantidades escondidas. Esto es todo lo que tomas cada mañana, con su dosis exacta y para que sirve.</p>"
+    },
+    {
+      "type": "select",
+      "id": "align",
+      "label": "Alineacion del encabezado",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centrado" }
+      ],
+      "default": "center"
+    },
+    { "type": "header", "content": "Cabeceras de la tabla" },
+    { "type": "text", "id": "col_1", "label": "Columna 1", "default": "Ingrediente" },
+    { "type": "text", "id": "col_2", "label": "Columna 2", "default": "Por dosis diaria" },
+    { "type": "text", "id": "col_3", "label": "Columna 3", "default": "% VRN" },
+    { "type": "text", "id": "col_4", "label": "Columna 4", "default": "Para que sirve" },
+    { "type": "header", "content": "Notas al pie" },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Nota legal",
+      "default": "<p>VRN: valores de referencia de nutrientes segun el Reglamento (UE) 1169/2011. Dosis diaria: 2 capsulas. Las declaraciones recogidas en esta tabla son las autorizadas por la Union Europea para cada nutriente.</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "other_ingredients",
+      "label": "Otros ingredientes",
+      "default": "Agente de recubrimiento (hidroxipropilmetilcelulosa, capsula vegetal), antiaglomerante (sales de magnesio de acidos grasos). Sin gluten, sin lactosa, sin azucares añadidos y sin colorantes artificiales."
+    },
+    { "type": "text", "id": "cta_text", "label": "Boton" },
+    { "type": "url", "id": "cta_link", "label": "Enlace del boton" }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingrediente",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Ingrediente", "default": "Magnesio (bisglicinato)" },
+        { "type": "text", "id": "amount", "label": "Cantidad por dosis", "default": "300 mg" },
+        { "type": "text", "id": "nrv", "label": "% VRN", "default": "80 %" },
+        {
+          "type": "text",
+          "id": "benefit",
+          "label": "Para que sirve",
+          "info": "Usa solo declaraciones autorizadas por la UE.",
+          "default": "Contribuye a disminuir el cansancio y la fatiga"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Tabla de composicion",
+      "blocks": [
+        { "type": "ingredient", "settings": { "name": "Colageno hidrolizado (tipo I y III)", "amount": "5.000 mg", "nrv": "—", "benefit": "Aporta peptidos de colageno de bajo peso molecular" } },
+        { "type": "ingredient", "settings": { "name": "Magnesio (bisglicinato)", "amount": "300 mg", "nrv": "80 %", "benefit": "Contribuye a disminuir el cansancio y la fatiga y al funcionamiento normal del sistema nervioso" } },
+        { "type": "ingredient", "settings": { "name": "Vitamina C (ascorbato calcico)", "amount": "160 mg", "nrv": "200 %", "benefit": "Contribuye a la formacion normal de colageno para el funcionamiento normal de la piel, los huesos y los cartilagos" } },
+        { "type": "ingredient", "settings": { "name": "Acido hialuronico", "amount": "100 mg", "nrv": "—", "benefit": "Componente natural de la piel y del liquido sinovial" } },
+        { "type": "ingredient", "settings": { "name": "Isoflavonas de soja", "amount": "40 mg", "nrv": "—", "benefit": "Extracto vegetal estandarizado al 40 % en isoflavonas" } },
+        { "type": "ingredient", "settings": { "name": "Hierro (bisglicinato)", "amount": "14 mg", "nrv": "100 %", "benefit": "Contribuye a disminuir el cansancio y la fatiga y a la formacion normal de globulos rojos" } },
+        { "type": "ingredient", "settings": { "name": "Zinc (bisglicinato)", "amount": "10 mg", "nrv": "100 %", "benefit": "Contribuye al mantenimiento del cabello, las uñas y la piel en condiciones normales" } },
+        { "type": "ingredient", "settings": { "name": "Vitamina B6 (P-5-P)", "amount": "1,4 mg", "nrv": "100 %", "benefit": "Contribuye a regular la actividad hormonal" } },
+        { "type": "ingredient", "settings": { "name": "Vitamina D3 (colecalciferol vegetal)", "amount": "25 µg", "nrv": "500 %", "benefit": "Contribuye al mantenimiento de los huesos y la funcion muscular en condiciones normales" } },
+        { "type": "ingredient", "settings": { "name": "Vitamina K2 (MK-7)", "amount": "75 µg", "nrv": "100 %", "benefit": "Contribuye al mantenimiento de los huesos en condiciones normales" } },
+        { "type": "ingredient", "settings": { "name": "Acido folico (metilfolato)", "amount": "200 µg", "nrv": "100 %", "benefit": "Contribuye a la funcion psicologica normal" } },
+        { "type": "ingredient", "settings": { "name": "Selenio (L-selenometionina)", "amount": "55 µg", "nrv": "100 %", "benefit": "Contribuye a la proteccion de las celulas frente al daño oxidativo" } },
+        { "type": "ingredient", "settings": { "name": "Vitamina B12 (metilcobalamina)", "amount": "2,5 µg", "nrv": "100 %", "benefit": "Contribuye al metabolismo energetico normal" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,118 @@
+<footer class="vf-footer">
+  <div class="vf-wrap">
+    <div class="vf-footer__grid">
+      <div>
+        <span class="vf-footer__brand">{{ shop.name }}</span>
+        {%- if section.settings.tagline != blank -%}
+          <p>{{ section.settings.tagline }}</p>
+        {%- endif -%}
+        <ul class="vf-footer__list" style="margin-top: 1.25rem;">
+          {%- if settings.social_instagram != blank -%}
+            <li><a href="{{ settings.social_instagram }}" rel="noopener" target="_blank">Instagram</a></li>
+          {%- endif -%}
+          {%- if settings.social_facebook != blank -%}
+            <li><a href="{{ settings.social_facebook }}" rel="noopener" target="_blank">Facebook</a></li>
+          {%- endif -%}
+          {%- if settings.social_youtube != blank -%}
+            <li><a href="{{ settings.social_youtube }}" rel="noopener" target="_blank">YouTube</a></li>
+          {%- endif -%}
+          {%- if settings.social_tiktok != blank -%}
+            <li><a href="{{ settings.social_tiktok }}" rel="noopener" target="_blank">TikTok</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      {%- if section.settings.menu_1 != blank -%}
+        <div>
+          <h3>{{ section.settings.menu_1_title | escape }}</h3>
+          <ul class="vf-footer__list">
+            {%- for link in section.settings.menu_1.links -%}
+              <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.menu_2 != blank -%}
+        <div>
+          <h3>{{ section.settings.menu_2_title | escape }}</h3>
+          <ul class="vf-footer__list">
+            {%- for link in section.settings.menu_2.links -%}
+              <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_newsletter -%}
+        <div>
+          <h3>{{ section.settings.newsletter_title | escape }}</h3>
+          {%- if section.settings.newsletter_text != blank -%}
+            <p>{{ section.settings.newsletter_text }}</p>
+          {%- endif -%}
+
+          {%- form 'customer', class: 'vf-newsletter' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            {%- if form.posted_successfully? -%}
+              <p class="vf-alert vf-alert--ok">Gracias. Revisa tu correo para confirmar la suscripcion.</p>
+            {%- elsif form.errors -%}
+              <p class="vf-alert vf-alert--error">{{ form.errors.messages.email }}</p>
+            {%- endif -%}
+
+            <div class="vf-field">
+              <label for="vf-footer-email">Correo electronico</label>
+              <input
+                type="email"
+                id="vf-footer-email"
+                name="contact[email]"
+                class="vf-input"
+                autocomplete="email"
+                placeholder="tunombre@correo.com"
+                required
+              >
+            </div>
+            <button type="submit" class="vf-btn vf-btn--primary vf-btn--full">Quiero recibirla</button>
+          {%- endform -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.disclaimer != blank -%}
+      <p class="vf-disclaimer">{{ section.settings.disclaimer }}</p>
+    {%- endif -%}
+
+    <div class="vf-footer__bottom">
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Todos los derechos reservados.</span>
+      {%- if shop.enabled_payment_types.size > 0 -%}
+        <div class="vf-payment">
+          {%- for type in shop.enabled_payment_types -%}
+            {{ type | payment_type_svg_tag: class: 'vf-payment__icon' }}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Pie de pagina",
+  "settings": [
+    { "type": "textarea", "id": "tagline", "label": "Descripcion breve de la marca" },
+    { "type": "text", "id": "menu_1_title", "label": "Titulo columna 1", "default": "Tienda" },
+    { "type": "link_list", "id": "menu_1", "label": "Menu columna 1", "default": "footer" },
+    { "type": "text", "id": "menu_2_title", "label": "Titulo columna 2", "default": "Ayuda" },
+    { "type": "link_list", "id": "menu_2", "label": "Menu columna 2" },
+    { "type": "checkbox", "id": "show_newsletter", "label": "Mostrar boletin", "default": true },
+    { "type": "text", "id": "newsletter_title", "label": "Titulo del boletin", "default": "Carta mensual" },
+    { "type": "textarea", "id": "newsletter_text", "label": "Texto del boletin" },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Aviso legal de complementos alimenticios",
+      "info": "Obligatorio en España para complementos alimenticios (RD 1487/2009)."
+    }
+  ],
+  "enabled_on": { "groups": ["footer"] }
+}
+{% endschema %}

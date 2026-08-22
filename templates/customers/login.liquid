@@ -1,0 +1,26 @@
+<section class="vf-section">
+  <div class="vf-wrap vf-wrap--narrow">
+    <header class="vf-head vf-head--center">
+      <h1>Entrar en mi cuenta</h1>
+      <hr class="vf-rule" style="margin-inline: auto;">
+    </header>
+
+    {%- form 'customer_login' -%}
+      {%- if form.errors -%}
+        <p class="vf-alert vf-alert--error">{{ form.errors | default_errors }}</p>
+      {%- endif -%}
+      <div class="vf-field">
+        <label for="vf-login-email">Correo electronico</label>
+        <input type="email" id="vf-login-email" name="customer[email]" class="vf-input" autocomplete="email" required>
+      </div>
+      <div class="vf-field">
+        <label for="vf-login-pass">Contraseña</label>
+        <input type="password" id="vf-login-pass" name="customer[password]" class="vf-input" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="vf-btn vf-btn--primary vf-btn--full">Entrar</button>
+      <p style="margin-top: 1.25rem;">
+        <a href="{{ routes.account_register_url }}">Crear una cuenta nueva</a>
+      </p>
+    {%- endform -%}
+  </div>
+</section>

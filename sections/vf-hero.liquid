@@ -1,0 +1,152 @@
+<section class="vf-hero">
+  <div class="vf-wrap">
+    <div class="vf-hero__grid">
+      <div class="vf-reveal">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="vf-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+        {%- endif -%}
+
+        {%- if section.settings.show_rating -%}
+          <p class="vf-social-proof">
+            <span class="vf-stars" role="img" aria-label="Valoracion {{ section.settings.rating_score | escape }} sobre 5">
+              {%- for i in (1..5) -%}{%- render 'vf-icon', icon: 'star', size: 20 -%}{%- endfor -%}
+            </span>
+            <span>{{ section.settings.rating_text | escape }}</span>
+          </p>
+        {%- endif -%}
+
+        <h1 class="vf-hero__title">{{ section.settings.heading }}</h1>
+
+        {%- if section.settings.subheading != blank -%}
+          <div class="vf-lede">{{ section.settings.subheading }}</div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul class="vf-hero__points">
+            {%- for block in section.blocks -%}
+              <li {{ block.shopify_attributes }}>
+                {%- render 'vf-icon', icon: 'check-circle', size: 22 -%}
+                <span>{{ block.settings.text }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        <div class="vf-btn-row">
+          {%- if section.settings.cta_text != blank -%}
+            <a href="{{ section.settings.cta_link | default: routes.all_products_collection_url }}" class="vf-btn vf-btn--primary">
+              {{ section.settings.cta_text | escape }}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.cta2_text != blank -%}
+            <a href="{{ section.settings.cta2_link }}" class="vf-btn vf-btn--outline">
+              {{ section.settings.cta2_text | escape }}
+            </a>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.reassurance != blank -%}
+          <p class="vf-form-note" style="color: var(--vf-ink-soft); margin-top: 1.25rem;">
+            {{ section.settings.reassurance }}
+          </p>
+        {%- endif -%}
+      </div>
+
+      <div class="vf-reveal">
+        {%- render 'vf-media',
+          image: section.settings.image,
+          ratio: 'portrait',
+          alt: section.settings.image_alt,
+          loading: 'eager',
+          sizes: '(min-width: 990px) 46vw, 100vw',
+          class: 'vf-hero__media'
+        -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Portada (hero)",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Antetitulo",
+      "default": "Formulado en España para mujeres de 45 a 65"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titular",
+      "default": "Duermes, pero amaneces cansada. <em>No es la edad.</em>"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Entradilla",
+      "default": "<p>A partir de los 50 el cuerpo deja de producir lo que antes le sobraba: colageno, magnesio, defensas frente al desgaste. VitaForge repone justo eso, en una sola toma al dia.</p>"
+    },
+    { "type": "image_picker", "id": "image", "label": "Imagen principal" },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Texto alternativo de la imagen",
+      "default": "Mujer de unos 55 años sonriendo en la cocina de su casa con luz natural"
+    },
+    { "type": "text", "id": "cta_text", "label": "Boton principal", "default": "Quiero recuperar mi energia" },
+    { "type": "url", "id": "cta_link", "label": "Enlace del boton principal" },
+    { "type": "text", "id": "cta2_text", "label": "Boton secundario", "default": "Ver la formula completa" },
+    { "type": "url", "id": "cta2_link", "label": "Enlace del boton secundario" },
+    {
+      "type": "richtext",
+      "id": "reassurance",
+      "label": "Frase de tranquilidad bajo los botones",
+      "default": "<p>Envio en 24-48 h · 60 dias de garantia de devolucion · Atencion por telefono y WhatsApp</p>"
+    },
+    { "type": "header", "content": "Prueba social" },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "label": "Mostrar valoracion",
+      "default": true,
+      "info": "Usa unicamente valoraciones reales y verificables de tus clientas."
+    },
+    { "type": "text", "id": "rating_score", "label": "Nota media", "default": "4,8" },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Texto junto a las estrellas",
+      "default": "4,8/5 segun nuestras clientas verificadas"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "point",
+      "name": "Punto clave",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "Una sola toma al dia, con el desayuno."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Portada (hero)",
+      "blocks": [
+        { "type": "point", "settings": { "text": "Formula completa: activos en dosis reales, no simbolicas." } },
+        { "type": "point", "settings": { "text": "Una sola toma al dia, con el desayuno. Sin pastilleros." } },
+        { "type": "point", "settings": { "text": "Fabricado en España y analizado lote a lote." } },
+        { "type": "point", "settings": { "text": "60 dias para probarlo con garantia de devolucion." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

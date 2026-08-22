@@ -1,0 +1,25 @@
+<section class="vf-section">
+  <div class="vf-wrap vf-wrap--narrow">
+    <header class="vf-head vf-head--center">
+      <h1>Activar mi cuenta</h1>
+      <hr class="vf-rule" style="margin-inline: auto;">
+      <p class="vf-lede">Elige una contraseña para terminar de crear tu cuenta.</p>
+    </header>
+
+    {%- form 'activate_customer_password' -%}
+      {%- if form.errors -%}
+        <p class="vf-alert vf-alert--error">{{ form.errors | default_errors }}</p>
+      {%- endif -%}
+      <div class="vf-field">
+        <label for="vf-act-pass">Contraseña</label>
+        <input type="password" id="vf-act-pass" name="customer[password]" class="vf-input" autocomplete="new-password" required>
+      </div>
+      <div class="vf-field">
+        <label for="vf-act-pass2">Repite la contraseña</label>
+        <input type="password" id="vf-act-pass2" name="customer[password_confirmation]" class="vf-input" autocomplete="new-password" required>
+      </div>
+      <button type="submit" class="vf-btn vf-btn--primary vf-btn--full">Activar cuenta</button>
+      <button type="submit" name="decline" class="vf-btn vf-btn--outline vf-btn--full" style="margin-top: 0.75rem;">No, gracias</button>
+    {%- endform -%}
+  </div>
+</section>

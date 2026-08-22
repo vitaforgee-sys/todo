@@ -1,0 +1,28 @@
+{%- comment -%}
+  Imagen con relacion de aspecto fija y marcador elegante cuando aun no
+  se ha subido la foto, para que la tienda nunca se vea "a medias".
+  Uso: {% render 'vf-media', image: section.settings.image, ratio: 'portrait',
+        alt: 'texto', sizes: '(min-width: 990px) 50vw, 100vw', class: 'vf-hero__media' %}
+{%- endcomment -%}
+{%- liquid
+  assign ratio_class = ratio | default: 'portrait'
+  assign img_sizes = sizes | default: '(min-width: 990px) 50vw, 100vw'
+  assign widths = '400,600,800,1000,1200,1600,2000'
+  assign img_loading = loading | default: 'lazy'
+-%}
+<div class="vf-media vf-media--{{ ratio_class }} {{ class }}">
+  {%- if image != blank -%}
+    {{
+      image
+      | image_url: width: 2000
+      | image_tag:
+        loading: img_loading,
+        sizes: img_sizes,
+        widths: widths,
+        alt: alt,
+        class: 'vf-media__img'
+    }}
+  {%- else -%}
+    <span class="vf-placeholder" role="img" aria-label="{{ alt | default: 'Imagen pendiente de subir' | escape }}"></span>
+  {%- endif -%}
+</div>

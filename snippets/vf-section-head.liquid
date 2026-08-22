@@ -1,0 +1,17 @@
+{%- comment -%}
+  Encabezado de seccion reutilizable: antetitulo + titulo + entradilla.
+{%- endcomment -%}
+{%- if eyebrow != blank or heading != blank or subheading != blank -%}
+  <header class="vf-head{% if align == 'center' %} vf-head--center{% endif %} vf-reveal">
+    {%- if eyebrow != blank -%}
+      <span class="vf-eyebrow">{{ eyebrow | escape }}</span>
+    {%- endif -%}
+    {%- if heading != blank -%}
+      <h2>{{ heading }}</h2>
+      <hr class="vf-rule">
+    {%- endif -%}
+    {%- if subheading != blank -%}
+      <div class="vf-lede">{{ subheading }}</div>
+    {%- endif -%}
+  </header>
+{%- endif -%}

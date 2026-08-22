@@ -1,0 +1,19 @@
+{%- comment -%}
+  Precio con comparativo y coste por dosis.
+  Uso: {% render 'vf-price', target: product, doses_label: 'por dia' %}
+{%- endcomment -%}
+{%- liquid
+  assign price = target.price | default: 0
+  assign compare = target.compare_at_price | default: 0
+-%}
+<div class="vf-price">
+  <span class="vf-price__amount">{{ price | money }}</span>
+  {%- if compare > price -%}
+    <s class="vf-price__compare">{{ compare | money }}</s>
+    {%- assign saving = compare | minus: price -%}
+    <span class="vf-badge vf-badge--sale">Ahorras {{ saving | money }}</span>
+  {%- endif -%}
+  {%- if doses_label != blank -%}
+    <span class="vf-price__unit">{{ doses_label }}</span>
+  {%- endif -%}
+</div>

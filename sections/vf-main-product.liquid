@@ -1,0 +1,258 @@
+{%- liquid
+  assign current = product.selected_or_first_available_variant
+  assign has_variants = false
+  if product.variants.size > 1
+    assign has_variants = true
+  endif
+-%}
+
+<div class="vf-wrap">
+  <div class="vf-pdp">
+    {%- comment -%} Galeria {%- endcomment -%}
+    <div class="vf-pdp__gallery" data-vf-gallery>
+      <div class="vf-media vf-media--square">
+        {%- if product.featured_image -%}
+          {{
+            product.featured_image
+            | image_url: width: 1400
+            | image_tag:
+              loading: 'eager',
+              sizes: '(min-width: 990px) 52vw, 100vw',
+              widths: '400,600,800,1000,1400',
+              alt: product.featured_image.alt | default: product.title,
+              data-vf-gallery-main: 'true'
+          }}
+        {%- else -%}
+          <span class="vf-placeholder"></span>
+        {%- endif -%}
+      </div>
+
+      {%- if product.images.size > 1 -%}
+        <div class="vf-pdp__thumbs">
+          {%- for image in product.images limit: 8 -%}
+            <button
+              type="button"
+              class="vf-pdp__thumb"
+              data-vf-gallery-thumb
+              data-src="{{ image | image_url: width: 1400 }}"
+              data-srcset="{{ image | image_url: width: 700 }} 700w, {{ image | image_url: width: 1400 }} 1400w"
+              data-alt="{{ image.alt | default: product.title | escape }}"
+              aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+            >
+              {{ image | image_url: width: 300 | image_tag: loading: 'lazy', widths: '150,300', alt: '' }}
+              <span class="vf-visually-hidden">Ver imagen {{ forloop.index }}</span>
+            </button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Informacion y compra {%- endcomment -%}
+    <div class="vf-pdp__info">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+
+          {%- when 'title' -%}
+            <div {{ block.shopify_attributes }}>
+              {%- if block.settings.eyebrow != blank -%}
+                <span class="vf-eyebrow">{{ block.settings.eyebrow | escape }}</span>
+              {%- endif -%}
+              <h1>{{ product.title | escape }}</h1>
+              {%- if block.settings.subtitle != blank -%}
+                <p class="vf-lede">{{ block.settings.subtitle | escape }}</p>
+              {%- endif -%}
+            </div>
+
+          {%- when 'rating' -%}
+            <p class="vf-social-proof" {{ block.shopify_attributes }}>
+              <span class="vf-stars" role="img" aria-label="{{ block.settings.text | escape }}">
+                {%- for i in (1..5) -%}{%- render 'vf-icon', icon: 'star', size: 20 -%}{%- endfor -%}
+              </span>
+              <span>{{ block.settings.text | escape }}</span>
+            </p>
+
+          {%- when 'price' -%}
+            <div {{ block.shopify_attributes }}>
+              {%- render 'vf-price', target: current, doses_label: block.settings.unit_label -%}
+              {%- if block.settings.tax_note != blank -%}
+                <p class="vf-quote__meta">{{ block.settings.tax_note | escape }}</p>
+              {%- endif -%}
+            </div>
+
+          {%- when 'description' -%}
+            <div class="vf-rte" {{ block.shopify_attributes }}>{{ product.description }}</div>
+
+          {%- when 'form' -%}
+            <div {{ block.shopify_attributes }}>
+              {%- form 'product', product, class: 'vf-variants', data-vf-variants: 'true' -%}
+                <script type="application/json" data-vf-variant-data>
+                  [
+                    {%- for v in product.variants -%}
+                      {
+                        "id": {{ v.id }},
+                        "available": {{ v.available }},
+                        "price_html": {{ v.price | money | json }}
+                      }{% unless forloop.last %},{% endunless %}
+                    {%- endfor -%}
+                  ]
+                </script>
+
+                {%- if has_variants -%}
+                  <div class="vf-field">
+                    <label for="vf-variant-{{ section.id }}">{{ block.settings.variant_label | escape }}</label>
+                    <select id="vf-variant-{{ section.id }}" class="vf-select" data-vf-variant-select>
+                      {%- for v in product.variants -%}
+                        <option
+                          value="{{ v.id }}"
+                          {% if v == current %}selected{% endif %}
+                          {% unless v.available %}disabled{% endunless %}
+                        >
+                          {{ v.title }} — {{ v.price | money }}{% unless v.available %} (agotado){% endunless %}
+                        </option>
+                      {%- endfor -%}
+                    </select>
+                  </div>
+                {%- endif -%}
+
+                <input type="hidden" name="id" value="{{ current.id }}" data-vf-variant-id>
+
+                <div class="vf-field">
+                  <label for="vf-qty-{{ section.id }}">Cantidad</label>
+                  <div class="vf-qty" data-vf-qty>
+                    <button type="button" data-step="-1" aria-label="Quitar una unidad">&minus;</button>
+                    <input
+                      type="number"
+                      id="vf-qty-{{ section.id }}"
+                      name="quantity"
+                      value="1"
+                      min="1"
+                      inputmode="numeric"
+                    >
+                    <button type="button" data-step="1" aria-label="Añadir una unidad">+</button>
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  class="vf-btn vf-btn--primary vf-btn--full"
+                  data-vf-submit
+                  data-label-available="{{ block.settings.button_label | escape }}"
+                  data-label-sold-out="Agotado temporalmente"
+                  {% unless current.available %}disabled{% endunless %}
+                >
+                  {% if current.available %}{{ block.settings.button_label | escape }}{% else %}Agotado temporalmente{% endif %}
+                </button>
+
+                {%- if block.settings.show_dynamic_checkout -%}
+                  {{ form | payment_button }}
+                {%- endif -%}
+              {%- endform -%}
+            </div>
+
+          {%- when 'reassurance' -%}
+            <ul class="vf-pdp__meta" {{ block.shopify_attributes }}>
+              {%- assign lines = block.settings.lines | newline_to_br | split: '<br />' -%}
+              {%- for line in lines -%}
+                {%- assign clean = line | strip -%}
+                {%- if clean != blank -%}
+                  <li>
+                    {%- render 'vf-icon', icon: 'check-circle', size: 21 -%}
+                    <span>{{ clean }}</span>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+
+          {%- when 'custom_text' -%}
+            <div class="vf-rte" style="margin-top: 1.5rem;" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </div>
+
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ficha de producto",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Titulo",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "eyebrow", "label": "Antetitulo", "default": "Complemento alimenticio" },
+        { "type": "text", "id": "subtitle", "label": "Subtitulo", "default": "60 capsulas · 1 mes de tratamiento" }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "Valoracion",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "4,8/5 segun nuestras clientas verificadas",
+          "info": "Usa unicamente valoraciones reales."
+        }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "Precio",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "unit_label", "label": "Texto bajo el precio", "default": "Menos de 1 € al dia" },
+        { "type": "text", "id": "tax_note", "label": "Nota fiscal", "default": "IVA incluido. Envio calculado en el pago." }
+      ]
+    },
+    { "type": "description", "name": "Descripcion", "limit": 1 },
+    {
+      "type": "form",
+      "name": "Compra",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "variant_label", "label": "Etiqueta del selector", "default": "Elige tu formato" },
+        { "type": "text", "id": "button_label", "label": "Texto del boton", "default": "Añadir a la cesta" },
+        { "type": "checkbox", "id": "show_dynamic_checkout", "label": "Mostrar pago rapido", "default": true }
+      ]
+    },
+    {
+      "type": "reassurance",
+      "name": "Garantias",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "lines",
+          "label": "Una garantia por linea",
+          "default": "Envio en 24-48 h. Gratis a partir de 49 €.\n60 dias de garantia de devolucion, sin explicaciones.\nFabricado en España y analizado lote a lote.\n¿Dudas? Llamanos: te atiende una persona."
+        }
+      ]
+    },
+    {
+      "type": "custom_text",
+      "name": "Texto libre",
+      "settings": [{ "type": "richtext", "id": "text", "label": "Texto" }]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ficha de producto",
+      "blocks": [
+        { "type": "title" },
+        { "type": "rating" },
+        { "type": "price" },
+        { "type": "description" },
+        { "type": "form" },
+        { "type": "reassurance" }
+      ]
+    }
+  ]
+}
+{% endschema %}

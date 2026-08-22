@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "articulo": {
+      "type": "vf-main-article",
+      "settings": {}
+    }
+  },
+  "order": [
+    "articulo"
+  ]
+}

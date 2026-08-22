@@ -1,0 +1,95 @@
+<section class="vf-section vf-section--sand">
+  <div class="vf-wrap">
+    {%- render 'vf-section-head',
+      eyebrow: section.settings.eyebrow,
+      heading: section.settings.heading,
+      subheading: section.settings.subheading,
+      align: 'center'
+    -%}
+
+    <div class="vf-reveal">
+      <div class="vf-table-wrap">
+        <table class="vf-table vf-compare">
+          <thead>
+            <tr>
+              <th scope="col"><span class="vf-visually-hidden">Caracteristica</span></th>
+              <th scope="col">{{ section.settings.col_us | escape }}</th>
+              <th scope="col">{{ section.settings.col_them_1 | escape }}</th>
+              <th scope="col">{{ section.settings.col_them_2 | escape }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for block in section.blocks -%}
+              <tr {{ block.shopify_attributes }}>
+                <th scope="row">{{ block.settings.feature | escape }}</th>
+                {%- liquid
+                  assign c1 = block.settings.us | default: '—'
+                  assign c2 = block.settings.them_1 | default: '—'
+                  assign c3 = block.settings.them_2 | default: '—'
+                  assign cells = c1 | append: '|' | append: c2 | append: '|' | append: c3 | split: '|'
+                -%}
+                {%- for cell in cells -%}
+                  <td>
+                    {%- if cell == 'si' -%}
+                      <span class="vf-yes">{%- render 'vf-icon', icon: 'check', size: 22 -%}</span>
+                      <span class="vf-visually-hidden">Si</span>
+                    {%- elsif cell == 'no' -%}
+                      <span class="vf-no">{%- render 'vf-icon', icon: 'cross', size: 22 -%}</span>
+                      <span class="vf-visually-hidden">No</span>
+                    {%- else -%}
+                      {{ cell }}
+                    {%- endif -%}
+                  </td>
+                {%- endfor -%}
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+      <span class="vf-table-scroll-hint">Desliza la tabla hacia los lados para verla completa.</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Comparativa",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetitulo", "default": "Compara sin prisa" },
+    { "type": "text", "id": "heading", "label": "Titulo", "default": "En que se diferencia de lo que ya has probado" },
+    { "type": "richtext", "id": "subheading", "label": "Entradilla" },
+    { "type": "text", "id": "col_us", "label": "Columna propia", "default": "VitaForge" },
+    { "type": "text", "id": "col_them_1", "label": "Columna 2", "default": "Multivitaminico de supermercado" },
+    { "type": "text", "id": "col_them_2", "label": "Columna 3", "default": "Colageno en polvo generico" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Fila",
+      "settings": [
+        { "type": "text", "id": "feature", "label": "Caracteristica" },
+        { "type": "text", "id": "us", "label": "VitaForge", "default": "si", "info": "Escribe si, no, o un texto libre." },
+        { "type": "text", "id": "them_1", "label": "Columna 2", "default": "no" },
+        { "type": "text", "id": "them_2", "label": "Columna 3", "default": "no" }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Comparativa",
+      "blocks": [
+        { "type": "row", "settings": { "feature": "Formulado para mujeres de 45 a 65", "us": "si", "them_1": "no", "them_2": "no" } },
+        { "type": "row", "settings": { "feature": "Dosis completa de magnesio y vitamina D3", "us": "si", "them_1": "no", "them_2": "no" } },
+        { "type": "row", "settings": { "feature": "Cantidades visibles de cada ingrediente", "us": "si", "them_1": "no", "them_2": "si" } },
+        { "type": "row", "settings": { "feature": "Analisis de laboratorio por lote", "us": "si", "them_1": "no", "them_2": "no" } },
+        { "type": "row", "settings": { "feature": "Tomas al dia", "us": "1", "them_1": "1", "them_2": "1 batido" } },
+        { "type": "row", "settings": { "feature": "Fabricado en España", "us": "si", "them_1": "no", "them_2": "no" } },
+        { "type": "row", "settings": { "feature": "Garantia de devolucion", "us": "60 dias", "them_1": "14 dias", "them_2": "14 dias" } },
+        { "type": "row", "settings": { "feature": "Atencion por telefono con una persona", "us": "si", "them_1": "no", "them_2": "no" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

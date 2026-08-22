@@ -1,0 +1,13 @@
+<section class="vf-section">
+  <div class="vf-wrap vf-wrap--narrow vf-reveal">
+    <header class="vf-head">
+      <h1>{{ page.title | escape }}</h1>
+      <hr class="vf-rule">
+    </header>
+    <div class="vf-rte">{{ page.content }}</div>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Pagina", "tag": "section", "settings": [] }
+{% endschema %}

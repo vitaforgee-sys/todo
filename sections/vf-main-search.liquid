@@ -1,0 +1,56 @@
+<section class="vf-section">
+  <div class="vf-wrap">
+    <header class="vf-head vf-head--center vf-reveal">
+      <h1>Buscar</h1>
+      <hr class="vf-rule" style="margin-inline: auto;">
+    </header>
+
+    <form action="{{ routes.search_url }}" method="get" role="search" class="vf-newsletter" style="margin-bottom: 3rem;">
+      <div class="vf-newsletter__row">
+        <div class="vf-field" style="margin-bottom: 0;">
+          <label for="vf-search-input" class="vf-visually-hidden">¿Que estas buscando?</label>
+          <input
+            type="search"
+            id="vf-search-input"
+            name="q"
+            class="vf-input"
+            value="{{ search.terms | escape }}"
+            placeholder="Escribe aqui lo que buscas"
+          >
+        </div>
+        <button type="submit" class="vf-btn vf-btn--primary">Buscar</button>
+      </div>
+    </form>
+
+    {%- if search.performed -%}
+      {%- if search.results_count > 0 -%}
+        <p class="vf-text-center" style="margin-bottom: 2rem;">
+          {{ search.results_count }} resultado{% if search.results_count != 1 %}s{% endif %} para "{{ search.terms | escape }}".
+        </p>
+        <div class="vf-products">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              {%- render 'vf-product-card', card_product: item -%}
+            {%- else -%}
+              <article class="vf-card">
+                <h2 style="font-size: var(--vf-fs-lg);">
+                  <a href="{{ item.url }}">{{ item.title | escape }}</a>
+                </h2>
+                <p>{{ item.content | strip_html | truncatewords: 30 }}</p>
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <div class="vf-empty">
+          <h2>Sin resultados para "{{ search.terms | escape }}"</h2>
+          <p>Prueba con otra palabra, o escribenos y te ayudamos a encontrarlo.</p>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Buscador", "tag": "section", "settings": [] }
+{% endschema %}

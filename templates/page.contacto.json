@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "pagina": {
+      "type": "vf-main-page",
+      "settings": {}
+    },
+    "contacto": {
+      "type": "vf-contact",
+      "settings": {
+        "eyebrow": "Estamos al otro lado",
+        "heading": "Escribenos o llamanos: te atiende una persona",
+        "text": "<p>Si tienes dudas sobre la formula, sobre tu pedido o simplemente prefieres que te lo expliquen por telefono antes de comprar, estamos encantadas de atenderte.</p>",
+        "phone": "900 000 000",
+        "hours": "de lunes a viernes, de 9:00 a 18:00",
+        "email": "hola@vitaforge.es",
+        "legal": "<p>Responsable: VitaForge. Finalidad: responder a tu consulta. Puedes ejercer tus derechos de acceso, rectificacion y supresion escribiendo a la direccion indicada en la politica de privacidad.</p>"
+      }
+    }
+  },
+  "order": [
+    "pagina",
+    "contacto"
+  ]
+}

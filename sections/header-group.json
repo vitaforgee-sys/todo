@@ -1,0 +1,22 @@
+{
+  "name": "Cabecera",
+  "type": "header",
+  "sections": {
+    "anuncio": {
+      "type": "vf-announcement",
+      "settings": {
+        "text": "Envio gratuito en pedidos superiores a 49 € · Entrega en 24-48 h en toda España",
+        "link": ""
+      }
+    },
+    "cabecera": {
+      "type": "vf-header",
+      "settings": {
+        "menu": "main-menu",
+        "show_search": true,
+        "show_account": true
+      }
+    }
+  },
+  "order": ["anuncio", "cabecera"]
+}

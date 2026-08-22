@@ -1,0 +1,15 @@
+{
+  "current": {
+    "logo_width": 150,
+    "color_background": "#faf6f0",
+    "color_sand": "#efe7db",
+    "color_text": "#241f1b",
+    "color_accent": "#8f5533",
+    "color_deep": "#33403a",
+    "color_gold": "#b98d33",
+    "font_heading": "playfair_display_n4",
+    "font_body": "assistant_n4",
+    "base_font_size": 18,
+    "show_cart_note": true
+  }
+}

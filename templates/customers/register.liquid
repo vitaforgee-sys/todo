@@ -1,0 +1,32 @@
+<section class="vf-section">
+  <div class="vf-wrap vf-wrap--narrow">
+    <header class="vf-head vf-head--center">
+      <h1>Crear mi cuenta</h1>
+      <hr class="vf-rule" style="margin-inline: auto;">
+      <p class="vf-lede">Asi podras consultar tus pedidos y repetir la compra en dos clics.</p>
+    </header>
+
+    {%- form 'create_customer' -%}
+      {%- if form.errors -%}
+        <p class="vf-alert vf-alert--error">{{ form.errors | default_errors }}</p>
+      {%- endif -%}
+      <div class="vf-field">
+        <label for="vf-reg-first">Nombre</label>
+        <input type="text" id="vf-reg-first" name="customer[first_name]" class="vf-input" autocomplete="given-name">
+      </div>
+      <div class="vf-field">
+        <label for="vf-reg-last">Apellidos</label>
+        <input type="text" id="vf-reg-last" name="customer[last_name]" class="vf-input" autocomplete="family-name">
+      </div>
+      <div class="vf-field">
+        <label for="vf-reg-email">Correo electronico</label>
+        <input type="email" id="vf-reg-email" name="customer[email]" class="vf-input" autocomplete="email" required>
+      </div>
+      <div class="vf-field">
+        <label for="vf-reg-pass">Contraseña</label>
+        <input type="password" id="vf-reg-pass" name="customer[password]" class="vf-input" autocomplete="new-password" required>
+      </div>
+      <button type="submit" class="vf-btn vf-btn--primary vf-btn--full">Crear cuenta</button>
+    {%- endform -%}
+  </div>
+</section>

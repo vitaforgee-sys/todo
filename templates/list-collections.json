@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "colecciones": {
+      "type": "vf-main-list-collections",
+      "settings": {}
+    }
+  },
+  "order": [
+    "colecciones"
+  ]
+}

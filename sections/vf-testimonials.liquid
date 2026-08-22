@@ -1,0 +1,99 @@
+{%- comment -%}
+  Publica unicamente opiniones reales y verificables. En España, inventar
+  reseñas o presentarlas como verificadas sin serlo es una practica desleal
+  sancionable (Ley 3/1991 y Directiva UE 2019/2161, "Omnibus").
+{%- endcomment -%}
+
+<section class="vf-section">
+  <div class="vf-wrap">
+    {%- render 'vf-section-head',
+      eyebrow: section.settings.eyebrow,
+      heading: section.settings.heading,
+      subheading: section.settings.subheading,
+      align: 'center'
+    -%}
+
+    <div class="vf-grid vf-grid--3">
+      {%- for block in section.blocks -%}
+        <figure class="vf-quote vf-reveal" {{ block.shopify_attributes }}>
+          {%- if section.settings.show_stars -%}
+            <span class="vf-stars" role="img" aria-label="5 de 5 estrellas">
+              {%- for i in (1..5) -%}{%- render 'vf-icon', icon: 'star', size: 18 -%}{%- endfor -%}
+            </span>
+          {%- endif -%}
+
+          <blockquote>{{ block.settings.quote }}</blockquote>
+
+          <figcaption class="vf-quote__author">
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 160
+                | image_tag: loading: 'lazy', widths: '80,160', alt: block.settings.name, class: 'vf-quote__avatar'
+              }}
+            {%- else -%}
+              <span class="vf-quote__avatar" aria-hidden="true">{{ block.settings.name | slice: 0 }}</span>
+            {%- endif -%}
+            <span>
+              <span class="vf-quote__name">{{ block.settings.name | escape }}</span>
+              <span class="vf-quote__meta">{{ block.settings.meta | escape }}</span>
+              {%- if block.settings.verified -%}
+                <span class="vf-verified">
+                  {%- render 'vf-icon', icon: 'check-circle', size: 15 -%}
+                  Compra verificada
+                </span>
+              {%- endif -%}
+            </span>
+          </figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonios",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetitulo", "default": "Lo que nos cuentan" },
+    { "type": "text", "id": "heading", "label": "Titulo", "default": "Mujeres como tu, con nombre y apellido" },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Entradilla",
+      "default": "<p>Opiniones recogidas de clientas que compraron en esta tienda. Publicamos las buenas y tambien las que no lo son tanto.</p>"
+    },
+    { "type": "checkbox", "id": "show_stars", "label": "Mostrar estrellas", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Testimonio",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Opinion",
+          "info": "Reproduce literalmente una opinion real de una clienta."
+        },
+        { "type": "text", "id": "name", "label": "Nombre", "default": "Maria Jose" },
+        { "type": "text", "id": "meta", "label": "Edad y ciudad", "default": "56 años · Valencia" },
+        { "type": "image_picker", "id": "image", "label": "Foto (opcional)" },
+        { "type": "checkbox", "id": "verified", "label": "Compra verificada", "default": true }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Testimonios",
+      "blocks": [
+        { "type": "quote", "settings": { "name": "Maria Jose", "meta": "56 años · Valencia", "quote": "<p>Lo que mas he notado es que llego a las siete de la tarde con ganas de algo mas que del sofa. Llevo tres meses y ya no me planteo dejarlo.</p>" } },
+        { "type": "quote", "settings": { "name": "Carmen", "meta": "61 años · Sevilla", "quote": "<p>Lo empece por las rodillas por la mañana. A la sexta semana me di cuenta de que ya no me acordaba de que me dolian.</p>" } },
+        { "type": "quote", "settings": { "name": "Pilar", "meta": "52 años · Bilbao", "quote": "<p>Agradezco muchisimo que pongan la tabla con las cantidades. Se la enseñe a mi medico de cabecera y me dijo que le parecia bien.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

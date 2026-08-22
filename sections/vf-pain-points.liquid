@@ -1,0 +1,121 @@
+<section class="vf-section vf-section--sand">
+  <div class="vf-wrap">
+    {%- render 'vf-section-head',
+      eyebrow: section.settings.eyebrow,
+      heading: section.settings.heading,
+      subheading: section.settings.subheading,
+      align: 'center'
+    -%}
+
+    <div class="vf-pain">
+      {%- for block in section.blocks -%}
+        <div class="vf-pain__item vf-reveal" {{ block.shopify_attributes }}>
+          <h3>{{ block.settings.title | escape }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.closing != blank -%}
+      <div class="vf-pain__closing vf-reveal">{{ section.settings.closing }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.cta_text != blank -%}
+      <div class="vf-btn-row" style="justify-content: center;">
+        <a href="{{ section.settings.cta_link }}" class="vf-btn vf-btn--primary">
+          {{ section.settings.cta_text | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Puntos de dolor",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetitulo", "default": "Hablemos claro" },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titulo",
+      "default": "¿Te reconoces en alguna de estas frases?"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Entradilla",
+      "default": "<p>Si has llegado hasta aqui, probablemente si. Y probablemente tambien te han dicho alguna vez que es lo que toca a tu edad.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "closing",
+      "label": "Frase de cierre",
+      "default": "<p>Nada de esto es simplemente la edad. Detras hay un cambio hormonal real, documentado y medible. Y hay mucho que puedes hacer al respecto.</p>"
+    },
+    { "type": "text", "id": "cta_text", "label": "Boton", "default": "Ver que contiene VitaForge" },
+    { "type": "url", "id": "cta_link", "label": "Enlace del boton" }
+  ],
+  "blocks": [
+    {
+      "type": "pain",
+      "name": "Punto de dolor",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Frase corta", "default": "Duermes, pero amaneces cansada." },
+        { "type": "richtext", "id": "text", "label": "Descripcion" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Puntos de dolor",
+      "blocks": [
+        {
+          "type": "pain",
+          "settings": {
+            "title": "Duermes, pero amaneces agotada.",
+            "text": "<p>Te acuestas pronto y aun asi el despertador te pilla sin fuerzas. No es pereza: es un descanso que ya no repara como antes.</p>"
+          }
+        },
+        {
+          "type": "pain",
+          "settings": {
+            "title": "Los sofocos llegan sin avisar.",
+            "text": "<p>En una reunion, en el supermercado, a las tres de la madrugada. Y cuesta explicar a los demas lo que supone.</p>"
+          }
+        },
+        {
+          "type": "pain",
+          "settings": {
+            "title": "Te crujen las rodillas al levantarte.",
+            "text": "<p>Esa rigidez de los primeros diez minutos de la mañana que hace cinco años sencillamente no existia.</p>"
+          }
+        },
+        {
+          "type": "pain",
+          "settings": {
+            "title": "Se te va el nombre a media frase.",
+            "text": "<p>La llaman niebla mental. Tu solo sabes que antes no te pasaba, y que te da rabia y un poco de miedo.</p>"
+          }
+        },
+        {
+          "type": "pain",
+          "settings": {
+            "title": "El espejo te devuelve otra piel.",
+            "text": "<p>Mas fina, mas apagada, y un pelo que se queda en el cepillo mas de lo que te gustaria.</p>"
+          }
+        },
+        {
+          "type": "pain",
+          "settings": {
+            "title": "Comes igual y el cuerpo cambia.",
+            "text": "<p>La misma dieta de siempre y, aun asi, una barriga que aparece sin haber cambiado nada.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

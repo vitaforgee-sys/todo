@@ -1,0 +1,58 @@
+<section class="vf-section">
+  <div class="vf-wrap">
+    <header class="vf-head vf-head--center vf-reveal">
+      <h1>{{ collection.title | escape }}</h1>
+      <hr class="vf-rule" style="margin-inline: auto;">
+      {%- if collection.description != blank -%}
+        <div class="vf-lede">{{ collection.description }}</div>
+      {%- endif -%}
+    </header>
+
+    {%- paginate collection.products by section.settings.per_page -%}
+      {%- if collection.products.size > 0 -%}
+        <div class="vf-products">
+          {%- for product in collection.products -%}
+            {%- render 'vf-product-card', card_product: product -%}
+          {%- endfor -%}
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          <nav class="vf-btn-row" style="justify-content: center;" aria-label="Paginacion">
+            {%- if paginate.previous -%}
+              <a href="{{ paginate.previous.url }}" class="vf-btn vf-btn--outline">Anterior</a>
+            {%- endif -%}
+            {%- if paginate.next -%}
+              <a href="{{ paginate.next.url }}" class="vf-btn vf-btn--outline">Siguiente</a>
+            {%- endif -%}
+          </nav>
+        {%- endif -%}
+      {%- else -%}
+        <div class="vf-empty">
+          <h2>Aun no hay productos aqui</h2>
+          <p>Vuelve pronto: estamos preparando novedades.</p>
+          <div class="vf-btn-row" style="justify-content: center;">
+            <a href="{{ routes.all_products_collection_url }}" class="vf-btn vf-btn--primary">Ver todo</a>
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Coleccion",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "per_page",
+      "min": 6,
+      "max": 24,
+      "step": 3,
+      "label": "Productos por pagina",
+      "default": 12
+    }
+  ]
+}
+{% endschema %}

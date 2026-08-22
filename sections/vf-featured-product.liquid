@@ -1,0 +1,73 @@
+{%- assign fp = section.settings.product -%}
+<section class="vf-section vf-section--surface">
+  <div class="vf-wrap">
+    <div class="vf-split{% if section.settings.flip %} vf-split--flip{% endif %}">
+      <div class="vf-split__media vf-reveal">
+        {%- if fp != blank -%}
+          {%- render 'vf-media', image: fp.featured_image, ratio: 'square', alt: fp.title, sizes: '(min-width: 990px) 48vw, 100vw' -%}
+        {%- else -%}
+          {%- render 'vf-media', image: section.settings.image, ratio: 'square', alt: section.settings.heading, sizes: '(min-width: 990px) 48vw, 100vw' -%}
+        {%- endif -%}
+      </div>
+
+      <div class="vf-reveal">
+        <span class="vf-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+        <h2>{% if section.settings.heading != blank %}{{ section.settings.heading | escape }}{% else %}{{ fp.title | escape }}{% endif %}</h2>
+        <hr class="vf-rule">
+
+        {%- if section.settings.text != blank -%}
+          <div class="vf-rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        {%- if fp != blank -%}
+          {%- render 'vf-price', target: fp, doses_label: section.settings.unit_label -%}
+
+          {%- form 'product', fp -%}
+            <input type="hidden" name="id" value="{{ fp.selected_or_first_available_variant.id }}">
+            <button
+              type="submit"
+              class="vf-btn vf-btn--primary"
+              {% unless fp.available %}disabled{% endunless %}
+            >
+              {% if fp.available %}{{ section.settings.button | escape }}{% else %}Agotado temporalmente{% endif %}
+            </button>
+          {%- endform -%}
+
+          <p style="margin-top: 1rem;">
+            <a href="{{ fp.url }}" class="vf-link-arrow">
+              Ver la ficha completa y la composicion
+              {%- render 'vf-icon', icon: 'arrow-right', size: 18 -%}
+            </a>
+          </p>
+        {%- else -%}
+          <p class="vf-table-note">
+            Selecciona un producto en los ajustes de esta seccion para mostrar aqui su precio y su boton de compra.
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Producto destacado",
+  "tag": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Producto" },
+    { "type": "image_picker", "id": "image", "label": "Imagen alternativa", "info": "Se usa si el producto aun no tiene foto." },
+    { "type": "checkbox", "id": "flip", "label": "Imagen a la derecha", "default": true },
+    { "type": "text", "id": "eyebrow", "label": "Antetitulo", "default": "El producto" },
+    { "type": "text", "id": "heading", "label": "Titulo", "default": "Todo lo que tu cuerpo echa de menos, en una capsula" },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texto",
+      "default": "<p>Trece activos en dosis reales, pensados para lo que cambia en el cuerpo de una mujer a partir de los 45. Una toma al dia y la tabla de composicion completa a la vista, para que puedas enseñarsela a tu medico.</p>"
+    },
+    { "type": "text", "id": "unit_label", "label": "Texto bajo el precio", "default": "Menos de 1 € al dia" },
+    { "type": "text", "id": "button", "label": "Boton", "default": "Añadir a la cesta" }
+  ],
+  "presets": [{ "name": "Producto destacado" }]
+}
+{% endschema %}
