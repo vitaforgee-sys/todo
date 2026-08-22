@@ -6,6 +6,7 @@
           image: section.settings.image,
           ratio: section.settings.ratio,
           alt: section.settings.image_alt,
+          fallback: section.settings.fallback,
           sizes: '(min-width: 990px) 48vw, 100vw'
         -%}
       </div>
@@ -52,6 +53,18 @@
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Imagen" },
     { "type": "text", "id": "image_alt", "label": "Texto alternativo" },
+    {
+      "type": "select",
+      "id": "fallback",
+      "label": "Ilustracion mientras no subas foto",
+      "options": [
+        { "value": "vf-art-duo.svg", "label": "Dos mujeres" },
+        { "value": "vf-art-portrait.svg", "label": "Retrato" },
+        { "value": "vf-art-still-life.svg", "label": "Bodegon del producto" },
+        { "value": "", "label": "Ninguna" }
+      ],
+      "default": "vf-art-duo.svg"
+    },
     {
       "type": "select",
       "id": "ratio",

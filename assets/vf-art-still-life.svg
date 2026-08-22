@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" role="img" aria-labelledby="vfStillTitle">
+  <title id="vfStillTitle">Bodegon del bote de VitaForge con un vaso de agua y una rama</title>
+  <defs>
+    <linearGradient id="vfBg2" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#f5efe6"/>
+      <stop offset="100%" stop-color="#e6dbca"/>
+    </linearGradient>
+    <linearGradient id="vfJar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8f5533"/>
+      <stop offset="45%" stop-color="#a6683f"/>
+      <stop offset="100%" stop-color="#70401f"/>
+    </linearGradient>
+    <linearGradient id="vfGlass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#dfeae6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="vfGrain2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="19"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.11"/></feComponentTransfer>
+      <feBlend in2="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="900" fill="url(#vfBg2)"/>
+  <circle cx="640" cy="270" r="180" fill="#b98d33" opacity="0.15"/>
+
+  <!-- Encimera -->
+  <rect x="0" y="700" width="900" height="200" fill="#33403a" opacity="0.10"/>
+  <ellipse cx="380" cy="706" rx="200" ry="20" fill="#33403a" opacity="0.12"/>
+  <ellipse cx="640" cy="710" rx="90" ry="14" fill="#33403a" opacity="0.10"/>
+
+  <!-- Rama botanica de fondo -->
+  <g stroke="#33403a" stroke-width="4" fill="none" opacity="0.32" stroke-linecap="round">
+    <path d="M756 700 C 760 600, 744 500, 706 424"/>
+    <path d="M726 500 C 772 480, 800 444, 808 400"/>
+    <path d="M714 580 C 668 566, 640 534, 632 494"/>
+    <path d="M740 620 C 786 606, 812 574, 820 534"/>
+  </g>
+  <g fill="#33403a" opacity="0.26">
+    <ellipse cx="812" cy="394" rx="30" ry="15" transform="rotate(-30 812 394)"/>
+    <ellipse cx="626" cy="488" rx="30" ry="15" transform="rotate(30 626 488)"/>
+    <ellipse cx="824" cy="528" rx="28" ry="14" transform="rotate(-28 824 528)"/>
+  </g>
+
+  <!-- Vaso de agua -->
+  <path d="M556 470 L582 700 L676 700 L702 470 Z" fill="url(#vfGlass)" stroke="#33403a" stroke-opacity="0.22" stroke-width="3"/>
+  <path d="M566 540 L586 696 L672 696 L692 540 Z" fill="#8fb3c9" opacity="0.30"/>
+  <ellipse cx="629" cy="470" rx="73" ry="13" fill="#ffffff" opacity="0.75"/>
+  <ellipse cx="629" cy="540" rx="63" ry="11" fill="#8fb3c9" opacity="0.45"/>
+
+  <!-- Bote del producto -->
+  <rect x="256" y="410" width="250" height="292" rx="26" fill="url(#vfJar)"/>
+  <rect x="292" y="352" width="178" height="66" rx="14" fill="#70401f"/>
+  <rect x="286" y="340" width="190" height="26" rx="12" fill="#5f3520"/>
+  <rect x="256" y="410" width="34" height="292" rx="18" fill="#ffffff" opacity="0.12"/>
+
+  <!-- Etiqueta -->
+  <rect x="286" y="470" width="190" height="176" rx="10" fill="#faf6f0"/>
+  <rect x="310" y="500" width="142" height="9" rx="4.5" fill="#8f5533"/>
+  <rect x="310" y="524" width="106" height="7" rx="3.5" fill="#241f1b" opacity="0.42"/>
+  <rect x="310" y="566" width="142" height="5" rx="2.5" fill="#241f1b" opacity="0.20"/>
+  <rect x="310" y="584" width="126" height="5" rx="2.5" fill="#241f1b" opacity="0.20"/>
+  <rect x="310" y="602" width="134" height="5" rx="2.5" fill="#241f1b" opacity="0.20"/>
+  <circle cx="440" cy="616" r="18" fill="#b98d33" opacity="0.55"/>
+
+  <!-- Capsulas sobre la encimera -->
+  <g>
+    <rect x="150" y="668" width="76" height="30" rx="15" fill="#a6683f" transform="rotate(-14 188 683)"/>
+    <rect x="150" y="668" width="38" height="30" rx="15" fill="#c98a5c" transform="rotate(-14 188 683)"/>
+    <rect x="196" y="700" width="76" height="30" rx="15" fill="#a6683f" transform="rotate(9 234 715)"/>
+    <rect x="196" y="700" width="38" height="30" rx="15" fill="#c98a5c" transform="rotate(9 234 715)"/>
+  </g>
+
+  <rect width="900" height="900" filter="url(#vfGrain2)" opacity="0.45" fill="#faf6f0" style="mix-blend-mode:multiply"/>
+</svg>

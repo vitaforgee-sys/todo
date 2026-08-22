@@ -543,7 +543,8 @@
         "heading": "Pensado para una mujer concreta, no para todo el mundo",
         "background": "cream",
         "eyebrow": "Nuestra historia",
-        "text": "<p>VitaForge no nacio en una sala de reuniones. Nacio de escuchar a mujeres de 50 a 60 años decir siempre lo mismo: que se sentian invisibles en la consulta, que les recetaban paciencia y que ninguna formula del mercado estaba pensada de verdad para ellas.</p><p>Asi que hicimos lo contrario: elegimos primero a quien queriamos ayudar y despues construimos la formula. Cada ingrediente esta ahi por una razon concreta, en la dosis que la evidencia respalda.</p>"
+        "text": "<p>VitaForge no nacio en una sala de reuniones. Nacio de escuchar a mujeres de 50 a 60 años decir siempre lo mismo: que se sentian invisibles en la consulta, que les recetaban paciencia y que ninguna formula del mercado estaba pensada de verdad para ellas.</p><p>Asi que hicimos lo contrario: elegimos primero a quien queriamos ayudar y despues construimos la formula. Cada ingrediente esta ahi por una razon concreta, en la dosis que la evidencia respalda.</p>",
+        "fallback": "vf-art-duo.svg"
       },
       "blocks": {
         "point_1": {

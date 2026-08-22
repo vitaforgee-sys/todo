@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" role="img" aria-labelledby="vfDuoTitle">
+  <title id="vfDuoTitle">Ilustracion de dos mujeres de mediana edad juntas</title>
+  <defs>
+    <linearGradient id="vfBg3" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#f5efe6"/>
+      <stop offset="100%" stop-color="#e2d6c3"/>
+    </linearGradient>
+    <linearGradient id="vfFigA" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#b3764b"/>
+      <stop offset="100%" stop-color="#8f5533"/>
+    </linearGradient>
+    <linearGradient id="vfFigB" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#4a574f"/>
+      <stop offset="100%" stop-color="#33403a"/>
+    </linearGradient>
+    <filter id="vfGrain3">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="31"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.11"/></feComponentTransfer>
+      <feBlend in2="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="900" fill="url(#vfBg3)"/>
+  <circle cx="520" cy="250" r="210" fill="#b98d33" opacity="0.17"/>
+
+  <!-- Detras: la amiga, mas pequeña y mas alta en el encuadre -->
+  <g transform="translate(360 120) scale(0.62)">
+    <path fill="url(#vfFigB)" d="      M372 262
+      C 424 262, 466 302, 474 350
+      C 478 372, 462 382, 464 398
+      C 470 416, 498 432, 510 450
+      C 515 459, 494 461, 478 462
+      C 482 469, 490 473, 490 481
+      C 490 487, 477 489, 475 493
+      C 484 497, 490 503, 486 511
+      C 483 521, 489 529, 482 537
+      C 468 562, 436 586, 412 596
+      C 406 600, 402 608, 402 618
+      L 404 672
+      C 452 690, 512 706, 556 726
+      C 610 750, 650 800, 658 874
+      L 668 1000
+      L 132 1000
+      L 142 874
+      C 150 800, 190 750, 244 726
+      C 268 716, 286 700, 290 680
+      L 290 622
+      C 282 604, 266 590, 258 570
+      C 246 548, 236 500, 236 452
+      C 236 390, 264 310, 326 272
+      C 340 264, 358 262, 372 262 Z"/>
+    <circle cx="252" cy="336" r="54" fill="#2b3730"/>
+  </g>
+
+  <!-- Delante: misma direccion de mirada, hombros solapados -->
+  <g transform="translate(60 200) scale(0.86)">
+    <path fill="#f2e9dc" d="      M372 262
+      C 424 262, 466 302, 474 350
+      C 478 372, 462 382, 464 398
+      C 470 416, 498 432, 510 450
+      C 515 459, 494 461, 478 462
+      C 482 469, 490 473, 490 481
+      C 490 487, 477 489, 475 493
+      C 484 497, 490 503, 486 511
+      C 483 521, 489 529, 482 537
+      C 468 562, 436 586, 412 596
+      C 406 600, 402 608, 402 618
+      L 404 672
+      C 452 690, 512 706, 556 726
+      C 610 750, 650 800, 658 874
+      L 668 1000
+      L 132 1000
+      L 142 874
+      C 150 800, 190 750, 244 726
+      C 268 716, 286 700, 290 680
+      L 290 622
+      C 282 604, 266 590, 258 570
+      C 246 548, 236 500, 236 452
+      C 236 390, 264 310, 326 272
+      C 340 264, 358 262, 372 262 Z" transform="translate(-9 -9)" opacity="0.9"/>
+    <path fill="url(#vfFigA)" d="      M372 262
+      C 424 262, 466 302, 474 350
+      C 478 372, 462 382, 464 398
+      C 470 416, 498 432, 510 450
+      C 515 459, 494 461, 478 462
+      C 482 469, 490 473, 490 481
+      C 490 487, 477 489, 475 493
+      C 484 497, 490 503, 486 511
+      C 483 521, 489 529, 482 537
+      C 468 562, 436 586, 412 596
+      C 406 600, 402 608, 402 618
+      L 404 672
+      C 452 690, 512 706, 556 726
+      C 610 750, 650 800, 658 874
+      L 668 1000
+      L 132 1000
+      L 142 874
+      C 150 800, 190 750, 244 726
+      C 268 716, 286 700, 290 680
+      L 290 622
+      C 282 604, 266 590, 258 570
+      C 246 548, 236 500, 236 452
+      C 236 390, 264 310, 326 272
+      C 340 264, 358 262, 372 262 Z"/>
+    <path fill="#5f3520" opacity="0.32" d="      M372 262
+      C 316 274, 264 324, 250 400
+      C 238 470, 248 528, 264 570
+      C 274 590, 286 604, 292 622
+      L 292 680
+      C 288 700, 270 716, 246 726
+      C 272 706, 282 686, 282 664
+      C 282 634, 266 612, 254 588
+      C 236 546, 228 470, 240 406
+      C 254 332, 304 282, 372 262 Z"/>
+  </g>
+
+  <rect width="900" height="900" filter="url(#vfGrain3)" opacity="0.45" fill="#faf6f0" style="mix-blend-mode:multiply"/>
+</svg>

@@ -107,10 +107,26 @@
   {
     "name": "Redes sociales",
     "settings": [
-      { "type": "text", "id": "social_instagram", "label": "Instagram (URL)" },
-      { "type": "text", "id": "social_facebook", "label": "Facebook (URL)" },
-      { "type": "text", "id": "social_youtube", "label": "YouTube (URL)" },
-      { "type": "text", "id": "social_tiktok", "label": "TikTok (URL)" }
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram (URL)"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook (URL)"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "YouTube (URL)"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "label": "TikTok (URL)"
+      }
     ]
   },
   {
@@ -121,6 +137,18 @@
         "id": "show_cart_note",
         "label": "Permitir nota del pedido",
         "default": true
+      }
+    ]
+  },
+  {
+    "name": "Movimiento",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_motion",
+        "label": "Fondo liquido y efectos al pasar el raton",
+        "default": true,
+        "info": "El fondo organico en movimiento y las microinteracciones. Se desactivan solos si el visitante tiene activado el ahorro de movimiento en su sistema."
       }
     ]
   }

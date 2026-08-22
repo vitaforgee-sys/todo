@@ -140,6 +140,23 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
+  /* ------------------------------------------------ Relleno liquido del boton
+     Guarda la posicion del cursor dentro del boton en dos variables CSS para
+     que el degradado nazca justo donde esta la mano. Un unico listener
+     delegado en el documento: no se multiplica por cada boton de la pagina. */
+  function initPointer() {
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    document.addEventListener('pointermove', function (event) {
+      var btn = event.target.closest ? event.target.closest('.vf-btn') : null;
+      if (!btn) return;
+      var rect = btn.getBoundingClientRect();
+      btn.style.setProperty('--vf-pointer-x', (event.clientX - rect.left) + 'px');
+      btn.style.setProperty('--vf-pointer-y', (event.clientY - rect.top) + 'px');
+    }, { passive: true });
+  }
+
   function boot(root) {
     initMenu(root);
     initFaq(root);
@@ -150,9 +167,10 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { boot(document); });
+    document.addEventListener('DOMContentLoaded', function () { boot(document); initPointer(); });
   } else {
     boot(document);
+    initPointer();
   }
 
   /* El editor de temas recarga secciones sueltas: re-inicializamos solo esa. */

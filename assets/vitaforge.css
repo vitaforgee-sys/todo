@@ -839,3 +839,266 @@ strong, b { font-weight: 600; }
 .vf-reveal { opacity: 0; transform: translateY(18px); }
 .vf-reveal.is-in { opacity: 1; transform: none; transition: opacity 0.7s var(--vf-ease), transform 0.7s var(--vf-ease); }
 @media (prefers-reduced-motion: reduce) { .vf-reveal { opacity: 1; transform: none; } }
+
+/* ==========================================================================
+   26. CAPA LIQUIDA
+   Fondo organico en movimiento lento detras de toda la pagina. Los colores
+   salen de los tokens de marca, asi que sigue al tema si cambias la paleta.
+   ========================================================================== */
+.vf-liquid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--vf-cream);
+}
+
+.vf-liquid-blob {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.5;
+  will-change: transform;
+}
+@media (min-width: 750px) { .vf-liquid-blob { filter: blur(110px); } }
+
+.vf-liquid-blob--1 {
+  width: 52vw; height: 52vw;
+  top: -12vw; left: -10vw;
+  background: radial-gradient(circle at 35% 35%, var(--vf-accent-soft), transparent 68%);
+  opacity: 0.32;
+  animation: vf-drift-1 34s var(--vf-ease) infinite alternate;
+}
+.vf-liquid-blob--2 {
+  width: 46vw; height: 46vw;
+  top: 32vh; right: -14vw;
+  background: radial-gradient(circle at 60% 40%, var(--vf-deep), transparent 66%);
+  opacity: 0.20;
+  animation: vf-drift-2 42s var(--vf-ease) infinite alternate;
+}
+.vf-liquid-blob--3 {
+  width: 60vw; height: 60vw;
+  bottom: -20vw; left: 18vw;
+  background: radial-gradient(circle at 45% 55%, var(--vf-gold), transparent 70%);
+  opacity: 0.22;
+  animation: vf-drift-3 50s var(--vf-ease) infinite alternate;
+}
+
+@keyframes vf-drift-1 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(6vw, 8vh, 0) scale(1.14); }
+  100% { transform: translate3d(-4vw, 14vh, 0) scale(0.94); }
+}
+@keyframes vf-drift-2 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-9vw, -10vh, 0) scale(1.18); }
+  100% { transform: translate3d(3vw, 9vh, 0) scale(0.9); }
+}
+@keyframes vf-drift-3 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(8vw, -7vh, 0) scale(0.88); }
+  100% { transform: translate3d(-7vw, 4vh, 0) scale(1.16); }
+}
+
+/* Las secciones crema se vuelven transparentes para dejar ver la capa liquida.
+   Las de color mantienen su fondo y llevan su propio brillo organico dentro. */
+body { background: transparent; }
+.vf-hero,
+.vf-section:not(.vf-section--sand):not(.vf-section--surface):not(.vf-section--deep) {
+  background: transparent;
+}
+
+.vf-section--sand,
+.vf-section--surface,
+.vf-section--deep {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.vf-section--sand::before,
+.vf-section--surface::before,
+.vf-section--deep::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 70vw; height: 70vw;
+  top: -25vw; right: -20vw;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  animation: vf-drift-2 46s var(--vf-ease) infinite alternate;
+}
+.vf-section--sand::before {
+  background: radial-gradient(circle at 50% 50%, var(--vf-accent-soft), transparent 65%);
+  opacity: 0.16;
+}
+.vf-section--surface::before {
+  background: radial-gradient(circle at 50% 50%, var(--vf-deep), transparent 65%);
+  opacity: 0.11;
+}
+.vf-section--deep::before {
+  background: radial-gradient(circle at 50% 50%, var(--vf-gold), transparent 62%);
+  opacity: 0.16;
+}
+
+/* La cabecera fija necesita un fondo con cuerpo para que el texto se lea. */
+.vf-header {
+  background: color-mix(in srgb, var(--vf-cream) 82%, transparent);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .vf-header { background: var(--vf-cream); }
+}
+
+/* La aparicion al hacer scroll adopta la misma inercia fluida. */
+.vf-reveal { transform: translateY(26px) scale(0.985); }
+.vf-reveal.is-in {
+  transform: none;
+  transition: opacity 0.85s var(--vf-ease), transform 0.95s cubic-bezier(0.16, 0.84, 0.32, 1);
+}
+
+/* ==========================================================================
+   27. MICROINTERACCIONES AL PASAR EL RATON
+   Cada elemento con el que se puede interactuar responde con un pequeño
+   impulso hacia el lector. Sutil a proposito: el publico objetivo agradece
+   la señal, no el espectaculo.
+   ========================================================================== */
+@media (hover: hover) and (pointer: fine) {
+
+  /* --- Botones: elevacion mas relleno liquido que nace del cursor --- */
+  .vf-btn {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .vf-btn::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: var(--vf-pointer-y, 50%);
+    left: var(--vf-pointer-x, 50%);
+    width: 320px; height: 320px;
+    margin: -160px 0 0 -160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.30), transparent 62%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.55s var(--vf-ease), opacity 0.4s var(--vf-ease);
+  }
+  .vf-btn:hover::before { transform: scale(1); opacity: 1; }
+  .vf-btn--outline::before {
+    background: radial-gradient(circle, color-mix(in srgb, var(--vf-accent) 22%, transparent), transparent 62%);
+  }
+  .vf-btn:hover {
+    transform: translateY(-3px) scale(1.025);
+    box-shadow: var(--vf-shadow-lift);
+  }
+  .vf-btn:active { transform: translateY(-1px) scale(0.995); }
+
+  /* --- Tarjetas: flotan y se calientan de color --- */
+  .vf-card,
+  .vf-pain__item,
+  .vf-quote,
+  .vf-product-card__media,
+  .vf-media {
+    transition: transform 0.45s var(--vf-ease),
+                box-shadow 0.45s var(--vf-ease),
+                border-color 0.45s var(--vf-ease);
+  }
+  .vf-card:hover,
+  .vf-quote:hover {
+    transform: translateY(-6px) scale(1.012);
+    box-shadow: var(--vf-shadow-lift);
+    border-color: var(--vf-accent-soft);
+  }
+  .vf-pain__item:hover {
+    transform: translateY(-5px) scale(1.012);
+    box-shadow: var(--vf-shadow-lift);
+    border-left-color: var(--vf-accent);
+  }
+  .vf-product-card:hover .vf-product-card__media,
+  .vf-media:hover { box-shadow: var(--vf-shadow-lift); }
+
+  /* --- Titulares y texto: un impulso muy corto --- */
+  h1, h2, h3, h4,
+  .vf-eyebrow,
+  .vf-hero__points li,
+  .vf-trust__item,
+  .vf-step,
+  .vf-pdp__meta li {
+    transition: transform 0.35s var(--vf-ease), color 0.35s var(--vf-ease);
+  }
+  h2:hover, h3:hover, h4:hover { transform: translateY(-2px) scale(1.008); }
+  .vf-eyebrow:hover { transform: translateY(-2px); letter-spacing: 0.19em; }
+  .vf-hero__points li:hover,
+  .vf-pdp__meta li:hover { transform: translateX(5px); }
+  .vf-trust__item:hover,
+  .vf-step:hover { transform: translateY(-4px); }
+  .vf-trust__item:hover svg { transform: scale(1.12); }
+  .vf-trust__item svg,
+  .vf-card__icon svg { transition: transform 0.4s var(--vf-ease); }
+  .vf-card:hover .vf-card__icon svg { transform: translateY(-3px) scale(1.1) rotate(-4deg); }
+
+  /* --- Enlaces --- */
+  .vf-nav a, .vf-footer a, .vf-link-arrow, .vf-product-card__title a {
+    transition: color 0.3s var(--vf-ease), transform 0.3s var(--vf-ease);
+    display: inline-block;
+  }
+  .vf-nav a:hover, .vf-product-card__title a:hover { transform: translateY(-2px); }
+  .vf-footer a:hover { transform: translateX(3px); }
+  .vf-link-arrow:hover { transform: translateY(-2px); }
+
+  /* --- Preguntas frecuentes y filas de tabla --- */
+  .vf-faq__q { transition: color 0.3s var(--vf-ease), padding-left 0.35s var(--vf-ease); }
+  .vf-faq__q:hover { padding-left: 8px; }
+  .vf-table tbody tr { transition: background-color 0.3s var(--vf-ease), transform 0.3s var(--vf-ease); }
+  .vf-table tbody tr:hover {
+    background: color-mix(in srgb, var(--vf-accent) 7%, transparent);
+  }
+
+  /* --- Iconos de la cabecera --- */
+  .vf-icon-btn { transition: background-color 0.3s var(--vf-ease), transform 0.3s var(--vf-ease); }
+  .vf-icon-btn:hover { transform: translateY(-2px) scale(1.06); }
+
+  /* --- Campos de formulario --- */
+  .vf-input, .vf-select, .vf-textarea {
+    transition: border-color 0.3s var(--vf-ease), box-shadow 0.3s var(--vf-ease);
+  }
+  .vf-input:hover, .vf-select:hover, .vf-textarea:hover { border-color: var(--vf-accent-soft); }
+  .vf-input:focus, .vf-select:focus, .vf-textarea:focus {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--vf-accent) 15%, transparent);
+  }
+}
+
+/* Nada de esto se ejecuta si el sistema pide movimiento reducido. */
+@media (prefers-reduced-motion: reduce) {
+  .vf-liquid-blob,
+  .vf-section--sand::before,
+  .vf-section--surface::before,
+  .vf-section--deep::before { animation: none; }
+  .vf-btn:hover,
+  .vf-card:hover,
+  .vf-quote:hover,
+  .vf-pain__item:hover { transform: none; }
+}
+
+/* Interruptor manual desde los ajustes del tema. */
+.vf-no-motion .vf-section--sand::before,
+.vf-no-motion .vf-section--surface::before,
+.vf-no-motion .vf-section--deep::before { animation: none; opacity: 0; }
+.vf-no-motion body,
+body.vf-no-motion { background: var(--vf-cream); }
+.vf-no-motion .vf-header { background: var(--vf-cream); backdrop-filter: none; }
+.vf-no-motion .vf-btn:hover,
+.vf-no-motion .vf-card:hover,
+.vf-no-motion .vf-quote:hover,
+.vf-no-motion .vf-pain__item:hover,
+.vf-no-motion h2:hover,
+.vf-no-motion h3:hover,
+.vf-no-motion h4:hover { transform: none; }
+
+/* Las ilustraciones de marca llenan su marco igual que una foto. */
+.vf-media__img--art { width: 100%; height: 100%; object-fit: cover; }

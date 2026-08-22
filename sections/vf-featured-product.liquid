@@ -4,9 +4,9 @@
     <div class="vf-split{% if section.settings.flip %} vf-split--flip{% endif %}">
       <div class="vf-split__media vf-reveal">
         {%- if fp != blank -%}
-          {%- render 'vf-media', image: fp.featured_image, ratio: 'square', alt: fp.title, sizes: '(min-width: 990px) 48vw, 100vw' -%}
+          {%- render 'vf-media', image: fp.featured_image, ratio: 'square', alt: fp.title, fallback: 'vf-art-still-life.svg', sizes: '(min-width: 990px) 48vw, 100vw' -%}
         {%- else -%}
-          {%- render 'vf-media', image: section.settings.image, ratio: 'square', alt: section.settings.heading, sizes: '(min-width: 990px) 48vw, 100vw' -%}
+          {%- render 'vf-media', image: section.settings.image, ratio: 'square', alt: section.settings.heading, fallback: 'vf-art-still-life.svg', sizes: '(min-width: 990px) 48vw, 100vw' -%}
         {%- endif -%}
       </div>
 

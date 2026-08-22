@@ -56,7 +56,7 @@ tuyos:
 | Que | Donde | Por que |
 |---|---|---|
 | **Tabla de composicion** | Editor de temas → seccion *Tabla de composicion* | Los ingredientes que trae por defecto son un ejemplo. Sustituyelos por los de la etiqueta real. |
-| **Imagenes** | Cada seccion tiene su selector de imagen | Sin imagen se muestra un marcador en color arena, nunca un hueco roto. |
+| **Imagenes** | Cada seccion tiene su selector de imagen | Sin foto se muestra la ilustracion de marca correspondiente (ver seccion 6). |
 | **Valoraciones y testimonios** | Secciones *Portada* y *Testimonios* | Solo se pueden publicar opiniones reales y verificables. |
 | **Telefono, correo y WhatsApp** | Seccion *Contacto* | Ahora hay datos de ejemplo. |
 | **Menus** | Tienda online → Navegacion | El tema usa `main-menu` y `footer`. |
@@ -127,3 +127,52 @@ Los complementos alimenticios estan regulados en España y en la UE:
 
 Antes de publicar, revisa los textos con quien lleve el registro sanitario del
 producto.
+
+
+---
+
+## 6. Imagenes
+
+El tema incluye tres ilustraciones originales en SVG, hechas para esta marca y
+sin ninguna restriccion de licencia:
+
+| Fichero | Donde aparece | Que muestra |
+|---|---|---|
+| `assets/vf-art-portrait.svg` | Portada (hero) | Busto de perfil de una mujer de mediana edad, enmarcado en arco |
+| `assets/vf-art-still-life.svg` | Producto destacado | Bodegon con el bote, un vaso de agua y una rama |
+| `assets/vf-art-duo.svg` | Texto con imagen | Dos mujeres juntas, una detras de otra |
+
+Son **imagenes por defecto**: en cuanto subas una foto real desde el selector de
+imagen de la seccion, la foto sustituye a la ilustracion. No hay que borrar nada.
+
+### Que fotografia funciona con este publico
+
+Cuando hagas la sesion, o si compras banco de imagenes, busca esto:
+
+- **Mujeres de 50 a 65 reales**, con canas, arrugas de expresion y gafas si las
+  llevan. Una modelo de 35 retocada para parecer mayor se detecta al instante y
+  destruye la confianza.
+- **Luz natural de mañana**, en cocina, salon o terraza. Nada de fondo blanco de
+  estudio ni de bata blanca.
+- **Gestos tranquilos**: leer la etiqueta, tomarse el vaso de agua, hablar con
+  una amiga. Evita el salto en la playa y los brazos en alto.
+- **Formato vertical 4:5** para la portada y **cuadrado 1:1** para el resto.
+- Al menos 1600 px de ancho.
+
+Bancos con licencia comercial gratuita: Unsplash, Pexels y Nappy. Para fotos de
+mujeres españolas concretas suele compensar una sesion propia de medio dia:
+sale barata y las imagenes no las tiene ningun competidor.
+
+---
+
+## 7. Movimiento
+
+La pagina lleva una capa liquida de fondo: tres manchas de color de la marca que
+se desplazan muy despacio detras del contenido, y un brillo organico dentro de
+cada seccion de color. Al pasar el raton, botones, tarjetas, titulares, enlaces,
+filas de tabla y preguntas responden con un impulso corto; los botones ademas
+tienen un relleno que nace en el punto exacto donde esta el cursor.
+
+Se puede apagar entero en **Ajustes del tema → Movimiento**. Y se desactiva solo,
+sin tocar nada, si el visitante tiene activado el ahorro de movimiento en su
+sistema operativo.

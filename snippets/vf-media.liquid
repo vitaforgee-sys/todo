@@ -1,8 +1,12 @@
 {%- comment -%}
-  Imagen con relacion de aspecto fija y marcador elegante cuando aun no
-  se ha subido la foto, para que la tienda nunca se vea "a medias".
+  Imagen con relacion de aspecto fija.
+  Si aun no se ha subido foto, cae en la ilustracion de marca indicada en
+  "fallback" (un fichero de assets/), y solo si tampoco la hay muestra el
+  marcador en color arena. Asi la tienda nunca se ve a medias.
+
   Uso: {% render 'vf-media', image: section.settings.image, ratio: 'portrait',
-        alt: 'texto', sizes: '(min-width: 990px) 50vw, 100vw', class: 'vf-hero__media' %}
+        alt: 'texto', fallback: 'vf-art-portrait.svg',
+        sizes: '(min-width: 990px) 50vw, 100vw', class: 'vf-hero__media' %}
 {%- endcomment -%}
 {%- liquid
   assign ratio_class = ratio | default: 'portrait'
@@ -22,6 +26,15 @@
         alt: alt,
         class: 'vf-media__img'
     }}
+  {%- elsif fallback != blank -%}
+    <img
+      src="{{ fallback | asset_url }}"
+      alt="{{ alt | default: 'Ilustracion de VitaForge' | escape }}"
+      loading="{{ img_loading }}"
+      class="vf-media__img vf-media__img--art"
+      width="900"
+      height="1000"
+    >
   {%- else -%}
     <span class="vf-placeholder" role="img" aria-label="{{ alt | default: 'Imagen pendiente de subir' | escape }}"></span>
   {%- endif -%}

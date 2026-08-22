@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-labelledby="vfPortraitTitle">
+  <title id="vfPortraitTitle">Retrato ilustrado de una mujer de mediana edad</title>
+  <defs>
+    <linearGradient id="vfArch" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#efe7db"/>
+      <stop offset="55%" stop-color="#e6dbca"/>
+      <stop offset="100%" stop-color="#dccbb4"/>
+    </linearGradient>
+    <linearGradient id="vfFig" x1="0.2" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#a6683f"/>
+      <stop offset="100%" stop-color="#7a4629"/>
+    </linearGradient>
+    <clipPath id="vfArchClip">
+      <path d="M100 1000 V400 a300 300 0 0 1 600 0 V1000 Z"/>
+    </clipPath>
+    <filter id="vfGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" seed="7"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.12"/></feComponentTransfer>
+      <feBlend in2="SourceGraphic" mode="multiply"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1000" fill="#faf6f0"/>
+  <path d="M100 1000 V400 a300 300 0 0 1 600 0 V1000 Z" fill="url(#vfArch)"/>
+
+  <g clip-path="url(#vfArchClip)">
+    <circle cx="628" cy="252" r="124" fill="#b98d33" opacity="0.18"/>
+
+    <!-- Busto de perfil mirando a la derecha: frente, nariz, labios, menton y mandibula -->
+    <path fill="url(#vfFig)" d="
+      M372 262
+      C 424 262, 466 302, 474 350
+      C 478 372, 462 382, 464 398
+      C 470 416, 498 432, 510 450
+      C 515 459, 494 461, 478 462
+      C 482 469, 490 473, 490 481
+      C 490 487, 477 489, 475 493
+      C 484 497, 490 503, 486 511
+      C 483 521, 489 529, 482 537
+      C 468 562, 436 586, 412 596
+      C 406 600, 402 608, 402 618
+      L 404 672
+      C 452 690, 512 706, 556 726
+      C 610 750, 650 800, 658 874
+      L 668 1000
+      L 132 1000
+      L 142 874
+      C 150 800, 190 750, 244 726
+      C 268 716, 286 700, 290 680
+      L 290 622
+      C 282 604, 266 590, 258 570
+      C 246 548, 236 500, 236 452
+      C 236 390, 264 310, 326 272
+      C 340 264, 358 262, 372 262 Z"/>
+
+    <!-- Melena corta: la sombra separa el cabello del rostro -->
+    <path fill="#5f3520" opacity="0.38" d="
+      M372 262
+      C 316 274, 264 324, 250 400
+      C 238 470, 248 528, 264 570
+      C 274 590, 286 604, 292 622
+      L 292 680
+      C 288 700, 270 716, 246 726
+      C 272 706, 282 686, 282 664
+      C 282 634, 266 612, 254 588
+      C 236 546, 228 470, 240 406
+      C 254 332, 304 282, 372 262 Z"/>
+    <path fill="#5f3520" opacity="0.22" d="
+      M402 618 C 402 606, 406 600, 412 596 C 392 610, 386 636, 388 672 L 404 672 Z"/>
+
+    <!-- Ramas botanicas -->
+    <g stroke="#33403a" stroke-width="3" fill="none" opacity="0.28" stroke-linecap="round">
+      <path d="M150 960 C 172 872, 178 790, 168 700"/>
+      <path d="M168 758 C 140 740, 124 710, 122 678"/>
+      <path d="M170 816 C 200 802, 218 774, 222 740"/>
+      <path d="M166 700 C 142 678, 132 650, 134 620"/>
+    </g>
+    <g fill="#33403a" opacity="0.20">
+      <ellipse cx="122" cy="672" rx="17" ry="9" transform="rotate(-32 122 672)"/>
+      <ellipse cx="226" cy="736" rx="17" ry="9" transform="rotate(28 226 736)"/>
+      <ellipse cx="134" cy="614" rx="15" ry="8" transform="rotate(-40 134 614)"/>
+    </g>
+  </g>
+
+  <rect width="800" height="1000" filter="url(#vfGrain)" opacity="0.45" fill="#faf6f0" style="mix-blend-mode:multiply"/>
+</svg>
