@@ -145,6 +145,24 @@ sin ninguna restriccion de licencia:
 Son **imagenes por defecto**: en cuanto subas una foto real desde el selector de
 imagen de la seccion, la foto sustituye a la ilustracion. No hay que borrar nada.
 
+### Como subir una foto
+
+1. **Tienda online → Temas → Personalizar**.
+2. Pincha la seccion **Portada (hero)** y usa **Imagen principal → Seleccionar imagen**.
+3. Sube el archivo y guarda. La foto sustituye a la ilustracion automaticamente.
+
+Shopify se encarga del resto: sirve la imagen desde su CDN, la convierte a WebP
+y genera los siete tamaños que el tema pide segun la pantalla. Por eso conviene
+subirla por aqui y no meterla en `assets/`.
+
+**Si al recortarla se corta la cara:** las fotos apaisadas pierden los lados al
+encajar en el formato vertical. Tienes dos salidas, y el tema respeta ambas:
+
+- **Contenido → Archivos → la imagen → Editar → punto focal.** Marca la cara y
+  el tema centra ahi el recorte en todos los tamaños.
+- **Portada (hero) → Formato de la imagen.** Cambia de «Vertical 4:5» a
+  «Cuadrada 1:1» o «Apaisada 16:10» para recortar menos.
+
 ### Que fotografia funciona con este publico
 
 Cuando hagas la sesion, o si compras banco de imagenes, busca esto:

@@ -12,7 +12,8 @@
         "reassurance": "<p>Envio en 24-48 h · 60 dias de garantia de devolucion · Atencion por telefono y WhatsApp</p>",
         "show_rating": true,
         "rating_score": "4,8",
-        "rating_text": "4,8/5 segun nuestras clientas verificadas"
+        "rating_text": "4,8/5 segun nuestras clientas verificadas",
+        "ratio": "portrait"
       },
       "blocks": {
         "point_1": {

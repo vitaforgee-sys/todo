@@ -13,8 +13,16 @@
   assign img_sizes = sizes | default: '(min-width: 990px) 50vw, 100vw'
   assign widths = '400,600,800,1000,1200,1600,2000'
   assign img_loading = loading | default: 'lazy'
+
+  comment
+    Punto focal: al recortar una foto apaisada a formato vertical se pierden
+    los lados, y con un primer plano eso puede cortar la cara. Shopify deja
+    marcar el punto focal en el editor de imagenes del admin; aqui lo
+    respetamos para que el recorte siempre caiga donde toca.
+  endcomment
+  assign foco = image.presentation.focal_point | default: 'center center'
 -%}
-<div class="vf-media vf-media--{{ ratio_class }} {{ class }}">
+<div class="vf-media vf-media--{{ ratio_class }} {{ class }}" style="--vf-media-pos: {{ foco }};">
   {%- if image != blank -%}
     {{
       image

@@ -392,7 +392,6 @@ strong, b { font-weight: 600; }
 }
 .vf-hero__title { margin-bottom: var(--vf-space-3); }
 .vf-hero__title em { font-style: italic; color: var(--vf-accent); }
-@media (min-width: 990px) { .vf-hero__media { aspect-ratio: 4 / 5; } }
 
 .vf-hero__points {
   list-style: none; padding: 0;
@@ -1102,3 +1101,6 @@ body.vf-no-motion { background: var(--vf-cream); }
 
 /* Las ilustraciones de marca llenan su marco igual que una foto. */
 .vf-media__img--art { width: 100%; height: 100%; object-fit: cover; }
+
+/* El recorte respeta el punto focal marcado en el admin de Shopify. */
+.vf-media img { object-position: var(--vf-media-pos, center center); }

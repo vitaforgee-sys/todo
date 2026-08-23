@@ -55,7 +55,7 @@
       <div class="vf-reveal">
         {%- render 'vf-media',
           image: section.settings.image,
-          ratio: 'portrait',
+          ratio: section.settings.ratio,
           alt: section.settings.image_alt,
           fallback: 'vf-art-portrait.svg',
           loading: 'eager',
@@ -91,6 +91,18 @@
       "default": "<p>A partir de los 50 el cuerpo deja de producir lo que antes le sobraba: colageno, magnesio, defensas frente al desgaste. VitaForge repone justo eso, en una sola toma al dia.</p>"
     },
     { "type": "image_picker", "id": "image", "label": "Imagen principal" },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Formato de la imagen",
+      "options": [
+        { "value": "portrait", "label": "Vertical 4:5" },
+        { "value": "square", "label": "Cuadrada 1:1" },
+        { "value": "wide", "label": "Apaisada 16:10" }
+      ],
+      "default": "portrait",
+      "info": "Si tu foto es apaisada y al recortarla se corta la cara, marca el punto focal en Contenido → Archivos, o elige aqui un formato mas ancho."
+    },
     {
       "type": "text",
       "id": "image_alt",
