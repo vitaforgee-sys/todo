@@ -1,10 +1,22 @@
 <section class="vf-section">
   <div class="vf-wrap">
+    {%- liquid
+      comment
+        La coleccion automatica de Shopify se titula "All products" en el idioma
+        de la tienda. La sustituimos por el titulo en español de los ajustes.
+      endcomment
+      assign titulo = collection.title
+      if collection.handle == 'all' and section.settings.title_all != blank
+        assign titulo = section.settings.title_all
+      endif
+    -%}
     <header class="vf-head vf-head--center vf-reveal">
-      <h1>{{ collection.title | escape }}</h1>
+      <h1>{{ titulo | escape }}</h1>
       <hr class="vf-rule" style="margin-inline: auto;">
       {%- if collection.description != blank -%}
         <div class="vf-lede">{{ collection.description }}</div>
+      {%- elsif section.settings.intro != blank -%}
+        <div class="vf-lede">{{ section.settings.intro }}</div>
       {%- endif -%}
     </header>
 
@@ -44,6 +56,20 @@
   "name": "Coleccion",
   "tag": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "title_all",
+      "label": "Titulo de la coleccion \"todos los productos\"",
+      "default": "Todos los productos",
+      "info": "Shopify llama \"All products\" a la coleccion automatica. Este texto la sustituye."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Texto de presentacion",
+      "default": "<p>Formulas pensadas para lo que cambia en el cuerpo de una mujer a partir de los 45. Pocas referencias, cada una con su composicion completa a la vista.</p>",
+      "info": "Se muestra solo si la coleccion no tiene descripcion propia."
+    },
     {
       "type": "range",
       "id": "per_page",

@@ -1,0 +1,16 @@
+{%- comment -%}
+  Fecha en español, independiente del idioma configurado en la tienda.
+  El filtro date con %B devuelve el mes en el idioma de la tienda, asi que
+  si la tienda esta en ingles saldria "August". Aqui lo resolvemos nosotros.
+
+  Uso: {% render 'vf-fecha', fecha: article.published_at %}
+{%- endcomment -%}
+{%- liquid
+  assign dia = fecha | date: '%-d'
+  assign anio = fecha | date: '%Y'
+  assign num_mes = fecha | date: '%-m' | plus: 0
+  assign indice = num_mes | minus: 1
+  assign meses = 'enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre' | split: ','
+  assign mes = meses[indice]
+-%}
+{{- dia }} de {{ mes }} de {{ anio -}}

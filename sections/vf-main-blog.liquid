@@ -17,7 +17,7 @@
                 <span class="vf-placeholder"></span>
               {%- endif -%}
             </a>
-            <p class="vf-quote__meta">{{ article.published_at | date: '%d de %B de %Y' }}</p>
+            <p class="vf-quote__meta">{%- render 'vf-fecha', fecha: article.published_at -%}</p>
             <h2 class="vf-product-card__title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h2>
             <p>{{ article.excerpt_or_content | strip_html | truncatewords: 26 }}</p>
           </article>

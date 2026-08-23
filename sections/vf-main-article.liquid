@@ -1,7 +1,7 @@
 <article class="vf-section">
   <div class="vf-wrap vf-wrap--narrow vf-reveal">
     <header class="vf-head">
-      <span class="vf-eyebrow">{{ article.published_at | date: '%d de %B de %Y' }}</span>
+      <span class="vf-eyebrow">{%- render 'vf-fecha', fecha: article.published_at -%}</span>
       <h1>{{ article.title | escape }}</h1>
       <hr class="vf-rule">
       {%- if article.author != blank -%}

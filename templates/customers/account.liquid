@@ -22,7 +22,13 @@
               <tr>
                 <th scope="row"><a href="{{ order.customer_url }}">{{ order.name }}</a></th>
                 <td>{{ order.created_at | date: '%d/%m/%Y' }}</td>
-                <td>{{ order.fulfillment_status_label }}</td>
+                <td>
+                  {%- case order.fulfillment_status -%}
+                    {%- when 'fulfilled' -%}Enviado
+                    {%- when 'partial' -%}Enviado en parte
+                    {%- else -%}En preparacion
+                  {%- endcase -%}
+                </td>
                 <td>{{ order.total_price | money }}</td>
               </tr>
             {%- endfor -%}

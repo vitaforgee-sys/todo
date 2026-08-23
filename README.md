@@ -176,3 +176,41 @@ tienen un relleno que nace en el punto exacto donde esta el cursor.
 Se puede apagar entero en **Ajustes del tema → Movimiento**. Y se desactiva solo,
 sin tocar nada, si el visitante tiene activado el ahorro de movimiento en su
 sistema operativo.
+
+---
+
+## 8. Idioma
+
+Todo el texto que escribe el tema esta en español. Pero hay cadenas que **no
+las genera el tema, sino Shopify**, y esas siguen al idioma configurado en la
+tienda, no al tema:
+
+- El boton de pago rapido (*Buy it now* / *Comprar ahora*).
+- Todo el proceso de pago (checkout).
+- Los mensajes de error de los formularios.
+- El titulo de la coleccion automatica (*All products*) y el de la pagina de
+  colecciones (*Collections*).
+- Los nombres de mes en las fechas.
+
+Lo que ya resuelve el tema por su cuenta:
+
+| Antes | Ahora |
+|---|---|
+| *All products* | «Todos los productos» (editable en la seccion Coleccion) |
+| *Collections* | «Nuestros productos» (editable en la seccion Lista de colecciones) |
+| *23 de August de 2026* | «23 de agosto de 2026», via `snippets/vf-fecha.liquid` |
+| *Fulfilled* / *Partial* | «Enviado» / «Enviado en parte» / «En preparacion» |
+
+Lo que hay que hacer **una vez en el admin**, porque desde el tema no se puede:
+
+1. **Configuracion → Idiomas de la tienda**: añade español y ponlo como idioma
+   predeterminado. Con esto el checkout, los errores y el boton de pago rapido
+   pasan a español.
+2. **Tienda online → Temas → ... → Editar contenido predeterminado**: revisa las
+   cadenas que Shopify usa fuera del tema.
+3. Si el boton de pago rapido sigue sin convencerte, se puede quitar desde
+   **Ficha de producto → Compra → Mostrar pago rapido**.
+
+Y recuerda que el titulo, la descripcion y los nombres de variante de cada
+producto son contenido tuyo del admin: si estan en ingles, hay que cambiarlos
+alli.

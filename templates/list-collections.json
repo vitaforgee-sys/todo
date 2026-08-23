@@ -2,7 +2,9 @@
   "sections": {
     "colecciones": {
       "type": "vf-main-list-collections",
-      "settings": {}
+      "settings": {
+        "heading": "Nuestros productos"
+      }
     }
   },
   "order": [

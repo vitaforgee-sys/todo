@@ -3,6 +3,8 @@
     "coleccion": {
       "type": "vf-main-collection",
       "settings": {
+        "title_all": "Todos los productos",
+        "intro": "<p>Formulas pensadas para lo que cambia en el cuerpo de una mujer a partir de los 45. Pocas referencias, cada una con su composicion completa a la vista.</p>",
         "per_page": 12
       }
     },

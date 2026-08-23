@@ -3,7 +3,7 @@
     <header class="vf-head">
       <h1>Pedido {{ order.name }}</h1>
       <hr class="vf-rule">
-      <p class="vf-quote__meta">Realizado el {{ order.created_at | date: '%d de %B de %Y' }}</p>
+      <p class="vf-quote__meta">Realizado el {%- render 'vf-fecha', fecha: order.created_at -%}</p>
     </header>
 
     <div class="vf-table-wrap">

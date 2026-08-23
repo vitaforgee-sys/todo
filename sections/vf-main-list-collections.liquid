@@ -1,7 +1,7 @@
 <section class="vf-section">
   <div class="vf-wrap">
     <header class="vf-head vf-head--center vf-reveal">
-      <h1>{{ page_title | escape }}</h1>
+      <h1>{{ section.settings.heading | default: page_title | escape }}</h1>
       <hr class="vf-rule" style="margin-inline: auto;">
     </header>
 
@@ -23,5 +23,17 @@
 </section>
 
 {% schema %}
-{ "name": "Lista de colecciones", "tag": "section", "settings": [] }
+{
+  "name": "Lista de colecciones",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titulo",
+      "default": "Nuestros productos",
+      "info": "Shopify genera este titulo en el idioma de la tienda. Este texto lo sustituye."
+    }
+  ]
+}
 {% endschema %}
