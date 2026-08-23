@@ -1,20 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "vf-hero",
-      "settings": {
-        "eyebrow": "Formulado en España para mujeres de 45 a 65",
-        "heading": "Duermes, pero amaneces cansada. <em>No es la edad.</em>",
-        "subheading": "<p>A partir de los 50 el cuerpo deja de producir lo que antes le sobraba: colageno, magnesio, defensas frente al desgaste. VitaForge repone justo eso, en una sola toma al dia.</p>",
-        "image_alt": "Mujer de unos 55 años sonriendo en la cocina de su casa con luz natural",
-        "cta_text": "Quiero recuperar mi energia",
-        "cta2_text": "Ver la formula completa",
-        "reassurance": "<p>Envio gratis a toda España · Entrega en 7-10 dias · 14 dias para devolverlo</p>",
-        "show_rating": true,
-        "rating_score": "4,8",
-        "rating_text": "4,8/5 segun nuestras clientas verificadas",
-        "ratio": "portrait"
-      },
       "blocks": {
         "point_1": {
           "type": "point",
@@ -46,11 +42,26 @@
         "point_2",
         "point_3",
         "point_4"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Formulado en España para mujeres de 45 a 65",
+        "heading": "Duermes, pero amaneces cansada. <em>No es la edad.</em>",
+        "subheading": "<p>A partir de los 50 el cuerpo deja de producir lo que antes le sobraba: colageno, magnesio, defensas frente al desgaste. VitaForge repone justo eso, en una sola toma al dia.</p>",
+        "image": "shopify://shop_images/ChatGPT_Image_23_ago_2026_13_02_53.png",
+        "ratio": "wide",
+        "image_alt": "Mujer de unos 55 años sonriendo en la cocina de su casa con luz natural",
+        "cta_text": "Quiero recuperar mi energia",
+        "cta_link": "",
+        "cta2_text": "Ver la formula completa",
+        "cta2_link": "",
+        "reassurance": "<p>Envio gratis a toda España · Entrega en 7-10 dias · 14 dias para devolverlo</p>",
+        "show_rating": true,
+        "rating_score": "4,8",
+        "rating_text": "4,8/5 segun nuestras clientas verificadas"
+      }
     },
     "confianza": {
       "type": "vf-trust-bar",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item",
@@ -86,18 +97,11 @@
         "item_2",
         "item_3",
         "item_4"
-      ]
+      ],
+      "settings": {}
     },
     "dolor": {
       "type": "vf-pain-points",
-      "settings": {
-        "eyebrow": "Hablemos claro",
-        "heading": "¿Te reconoces en alguna de estas frases?",
-        "subheading": "<p>Si has llegado hasta aqui, probablemente si. Y probablemente tambien te han dicho alguna vez que es lo que toca a tu edad.</p>",
-        "closing": "<p>Nada de esto es simplemente la edad. Detras hay un cambio hormonal real, documentado y medible. Y hay mucho que puedes hacer al respecto.</p>",
-        "cta_text": "Ver que contiene VitaForge",
-        "cta_link": "/collections/all"
-      },
       "blocks": {
         "pain_1": {
           "type": "pain",
@@ -149,11 +153,20 @@
         "pain_4",
         "pain_5",
         "pain_6"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Hablemos claro",
+        "heading": "¿Te reconoces en alguna de estas frases?",
+        "subheading": "<p>Si has llegado hasta aqui, probablemente si. Y probablemente tambien te han dicho alguna vez que es lo que toca a tu edad.</p>",
+        "closing": "<p>Nada de esto es simplemente la edad. Detras hay un cambio hormonal real, documentado y medible. Y hay mucho que puedes hacer al respecto.</p>",
+        "cta_text": "Ver que contiene VitaForge",
+        "cta_link": "/collections/all"
+      }
     },
     "producto": {
       "type": "vf-featured-product",
       "settings": {
+        "product": "",
         "flip": true,
         "eyebrow": "El producto",
         "heading": "Todo lo que tu cuerpo echa de menos, en una capsula",
@@ -164,12 +177,6 @@
     },
     "beneficios": {
       "type": "vf-benefits",
-      "settings": {
-        "eyebrow": "Por que funciona",
-        "heading": "Cuatro frentes, una sola capsula",
-        "subheading": "<p>En lugar de tomar cuatro botes distintos, VitaForge cubre en una sola formula lo que el cuerpo deja de producir a partir de los 45.</p>",
-        "columns": "4"
-      },
       "blocks": {
         "benefit_1": {
           "type": "benefit",
@@ -209,24 +216,16 @@
         "benefit_2",
         "benefit_3",
         "benefit_4"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Por que funciona",
+        "heading": "Cuatro frentes, una sola capsula",
+        "subheading": "<p>En lugar de tomar cuatro botes distintos, VitaForge cubre en una sola formula lo que el cuerpo deja de producir a partir de los 45.</p>",
+        "columns": "4"
+      }
     },
     "composicion": {
       "type": "vf-formula-table",
-      "settings": {
-        "eyebrow": "Transparencia total",
-        "heading": "Que contiene exactamente cada dosis diaria",
-        "subheading": "<p>Sin mezclas propietarias ni cantidades escondidas. Esto es todo lo que tomas cada mañana, con su dosis exacta y para que sirve.</p>",
-        "align": "center",
-        "col_1": "Ingrediente",
-        "col_2": "Por dosis diaria",
-        "col_3": "% VRN",
-        "col_4": "Para que sirve",
-        "note": "<p>VRN: valores de referencia de nutrientes segun el Reglamento (UE) 1169/2011. Dosis diaria: 2 capsulas. Las declaraciones recogidas en esta tabla son las autorizadas por la Union Europea para cada nutriente.</p>",
-        "other_ingredients": "Agente de recubrimiento (hidroxipropilmetilcelulosa, capsula vegetal), antiaglomerante (sales de magnesio de acidos grasos). Sin gluten, sin lactosa, sin azucares añadidos y sin colorantes artificiales.",
-        "cta_text": "Quiero probarlo sin riesgo",
-        "cta_link": "/collections/all"
-      },
       "blocks": {
         "ingredient_1": {
           "type": "ingredient",
@@ -360,16 +359,24 @@
         "ingredient_11",
         "ingredient_12",
         "ingredient_13"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Transparencia total",
+        "heading": "Que contiene exactamente cada dosis diaria",
+        "subheading": "<p>Sin mezclas propietarias ni cantidades escondidas. Esto es todo lo que tomas cada mañana, con su dosis exacta y para que sirve.</p>",
+        "align": "center",
+        "col_1": "Ingrediente",
+        "col_2": "Por dosis diaria",
+        "col_3": "% VRN",
+        "col_4": "Para que sirve",
+        "note": "<p>VRN: valores de referencia de nutrientes segun el Reglamento (UE) 1169/2011. Dosis diaria: 2 capsulas. Las declaraciones recogidas en esta tabla son las autorizadas por la Union Europea para cada nutriente.</p>",
+        "other_ingredients": "Agente de recubrimiento (hidroxipropilmetilcelulosa, capsula vegetal), antiaglomerante (sales de magnesio de acidos grasos). Sin gluten, sin lactosa, sin azucares añadidos y sin colorantes artificiales.",
+        "cta_text": "Quiero probarlo sin riesgo",
+        "cta_link": "/collections/all"
+      }
     },
     "modo_empleo": {
       "type": "vf-steps",
-      "settings": {
-        "eyebrow": "Modo de empleo",
-        "heading": "Tan sencillo que no lo olvidaras",
-        "subheading": "<p>Sin horarios imposibles ni cinco botes en la encimera.</p>",
-        "note": "<p>No superar la dosis diaria recomendada. Los complementos alimenticios no deben utilizarse como sustitutos de una dieta equilibrada.</p>"
-      },
       "blocks": {
         "step_1": {
           "type": "step",
@@ -397,42 +404,42 @@
         "step_1",
         "step_2",
         "step_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Modo de empleo",
+        "heading": "Tan sencillo que no lo olvidaras",
+        "subheading": "<p>Sin horarios imposibles ni cinco botes en la encimera.</p>",
+        "note": "<p>No superar la dosis diaria recomendada. Los complementos alimenticios no deben utilizarse como sustitutos de una dieta equilibrada.</p>"
+      }
     },
     "testimonios": {
       "type": "vf-testimonials",
-      "settings": {
-        "eyebrow": "Lo que nos cuentan",
-        "heading": "Mujeres como tu, con nombre y apellido",
-        "subheading": "<p>Opiniones recogidas de clientas que compraron en esta tienda. Publicamos las buenas y tambien las que no lo son tanto.</p>",
-        "show_stars": true
-      },
       "blocks": {
         "quote_1": {
           "type": "quote",
           "settings": {
+            "quote": "<p>Lo que mas he notado es que llego a las siete de la tarde con ganas de algo mas que del sofa. Llevo tres meses y ya no me planteo dejarlo.</p>",
             "name": "Maria Jose",
             "meta": "56 años · Valencia",
-            "verified": true,
-            "quote": "<p>Lo que mas he notado es que llego a las siete de la tarde con ganas de algo mas que del sofa. Llevo tres meses y ya no me planteo dejarlo.</p>"
+            "verified": true
           }
         },
         "quote_2": {
           "type": "quote",
           "settings": {
+            "quote": "<p>Lo empece por las rodillas por la mañana. A la sexta semana me di cuenta de que ya no me acordaba de que me dolian.</p>",
             "name": "Carmen",
             "meta": "61 años · Sevilla",
-            "verified": true,
-            "quote": "<p>Lo empece por las rodillas por la mañana. A la sexta semana me di cuenta de que ya no me acordaba de que me dolian.</p>"
+            "verified": true
           }
         },
         "quote_3": {
           "type": "quote",
           "settings": {
+            "quote": "<p>Agradezco muchisimo que pongan la tabla con las cantidades. Se la enseñe a mi medico de cabecera y me dijo que le parecia bien.</p>",
             "name": "Pilar",
             "meta": "52 años · Bilbao",
-            "verified": true,
-            "quote": "<p>Agradezco muchisimo que pongan la tabla con las cantidades. Se la enseñe a mi medico de cabecera y me dijo que le parecia bien.</p>"
+            "verified": true
           }
         }
       },
@@ -440,88 +447,87 @@
         "quote_1",
         "quote_2",
         "quote_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Lo que nos cuentan",
+        "heading": "Mujeres como tu, con nombre y apellido",
+        "subheading": "<p>Opiniones recogidas de clientas que compraron en esta tienda. Publicamos las buenas y tambien las que no lo son tanto.</p>",
+        "show_stars": true
+      }
     },
     "comparativa": {
       "type": "vf-comparison",
-      "settings": {
-        "eyebrow": "Compara sin prisa",
-        "heading": "En que se diferencia de lo que ya has probado",
-        "col_us": "VitaForge",
-        "col_them_1": "Multivitaminico de supermercado",
-        "col_them_2": "Colageno en polvo generico"
-      },
       "blocks": {
         "row_1": {
           "type": "row",
           "settings": {
+            "feature": "Formulado para mujeres de 45 a 65",
             "us": "si",
             "them_1": "no",
-            "them_2": "no",
-            "feature": "Formulado para mujeres de 45 a 65"
+            "them_2": "no"
           }
         },
         "row_2": {
           "type": "row",
           "settings": {
+            "feature": "Dosis completa de magnesio y vitamina D3",
             "us": "si",
             "them_1": "no",
-            "them_2": "no",
-            "feature": "Dosis completa de magnesio y vitamina D3"
+            "them_2": "no"
           }
         },
         "row_3": {
           "type": "row",
           "settings": {
+            "feature": "Cantidades visibles de cada ingrediente",
             "us": "si",
             "them_1": "no",
-            "them_2": "si",
-            "feature": "Cantidades visibles de cada ingrediente"
+            "them_2": "si"
           }
         },
         "row_4": {
           "type": "row",
           "settings": {
+            "feature": "Analisis de laboratorio por lote",
             "us": "si",
             "them_1": "no",
-            "them_2": "no",
-            "feature": "Analisis de laboratorio por lote"
+            "them_2": "no"
           }
         },
         "row_5": {
           "type": "row",
           "settings": {
+            "feature": "Tomas al dia",
             "us": "1",
             "them_1": "1",
-            "them_2": "1 batido",
-            "feature": "Tomas al dia"
+            "them_2": "1 batido"
           }
         },
         "row_6": {
           "type": "row",
           "settings": {
+            "feature": "Fabricado en España",
             "us": "si",
             "them_1": "no",
-            "them_2": "no",
-            "feature": "Fabricado en España"
+            "them_2": "no"
           }
         },
         "row_7": {
           "type": "row",
           "settings": {
+            "feature": "Devolucion sin tener que justificarte",
             "us": "si",
             "them_1": "no",
-            "them_2": "no",
-            "feature": "Devolucion sin tener que justificarte"
+            "them_2": "no"
           }
         },
         "row_8": {
           "type": "row",
           "settings": {
+            "feature": "Atencion por telefono con una persona",
             "us": "si",
             "them_1": "no",
-            "them_2": "no",
-            "feature": "Atencion por telefono con una persona"
+            "them_2": "no"
           }
         }
       },
@@ -534,19 +540,18 @@
         "row_6",
         "row_7",
         "row_8"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Compara sin prisa",
+        "heading": "En que se diferencia de lo que ya has probado",
+        "subheading": "",
+        "col_us": "VitaForge",
+        "col_them_1": "Multivitaminico de supermercado",
+        "col_them_2": "Colageno en polvo generico"
+      }
     },
     "historia": {
       "type": "vf-split",
-      "settings": {
-        "ratio": "square",
-        "flip": false,
-        "heading": "Pensado para una mujer concreta, no para todo el mundo",
-        "background": "cream",
-        "eyebrow": "Nuestra historia",
-        "text": "<p>VitaForge no nacio en una sala de reuniones. Nacio de escuchar a mujeres de 50 a 60 años decir siempre lo mismo: que se sentian invisibles en la consulta, que les recetaban paciencia y que ninguna formula del mercado estaba pensada de verdad para ellas.</p><p>Asi que hicimos lo contrario: elegimos primero a quien queriamos ayudar y despues construimos la formula. Cada ingrediente esta ahi por una razon concreta, en la dosis que la evidencia respalda.</p>",
-        "fallback": "vf-art-duo.svg"
-      },
       "blocks": {
         "point_1": {
           "type": "point",
@@ -571,7 +576,19 @@
         "point_1",
         "point_2",
         "point_3"
-      ]
+      ],
+      "settings": {
+        "image_alt": "",
+        "fallback": "vf-art-duo.svg",
+        "ratio": "square",
+        "flip": false,
+        "eyebrow": "Nuestra historia",
+        "heading": "Pensado para una mujer concreta, no para todo el mundo",
+        "text": "<p>VitaForge no nacio en una sala de reuniones. Nacio de escuchar a mujeres de 50 a 60 años decir siempre lo mismo: que se sentian invisibles en la consulta, que les recetaban paciencia y que ninguna formula del mercado estaba pensada de verdad para ellas.</p><p>Asi que hicimos lo contrario: elegimos primero a quien queriamos ayudar y despues construimos la formula. Cada ingrediente esta ahi por una razon concreta, en la dosis que la evidencia respalda.</p>",
+        "cta_text": "",
+        "cta_link": "",
+        "background": "cream"
+      }
     },
     "garantia": {
       "type": "vf-guarantee",
@@ -585,16 +602,6 @@
     },
     "faq": {
       "type": "vf-faq",
-      "settings": {
-        "eyebrow": "Resolvemos tus dudas",
-        "heading": "Preguntas frecuentes",
-        "subheading": "<p>Las mismas que nos hacen por telefono cada semana. Si te queda alguna, escribenos: contestamos personas, no robots.</p>",
-        "one_at_a_time": true,
-        "enable_schema": true,
-        "cta_text": "<p>¿Te queda alguna duda?</p>",
-        "cta_label": "Escribenos y te respondemos",
-        "cta_link": "/pages/contacto"
-      },
       "blocks": {
         "faq_1": {
           "type": "faq",
@@ -694,7 +701,17 @@
         "faq_10",
         "faq_11",
         "faq_12"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Resolvemos tus dudas",
+        "heading": "Preguntas frecuentes",
+        "subheading": "<p>Las mismas que nos hacen por telefono cada semana. Si te queda alguna, escribenos: contestamos personas, no robots.</p>",
+        "one_at_a_time": true,
+        "enable_schema": true,
+        "cta_text": "<p>¿Te queda alguna duda?</p>",
+        "cta_label": "Escribenos y te respondemos",
+        "cta_link": "/pages/contacto"
+      }
     },
     "boletin": {
       "type": "vf-newsletter",
