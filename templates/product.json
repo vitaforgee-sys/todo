@@ -21,7 +21,7 @@
           "type": "price",
           "settings": {
             "unit_label": "Menos de 1 € al dia",
-            "tax_note": "IVA incluido. Envio calculado en el pago."
+            "tax_note": "IVA incluido. Envio gratis a toda España."
           }
         },
         "description_4": {
@@ -39,7 +39,7 @@
         "reassurance_6": {
           "type": "reassurance",
           "settings": {
-            "lines": "Envio en 24-48 h. Gratis a partir de 49 €.\n60 dias de garantia de devolucion, sin explicaciones.\nFabricado en España y analizado lote a lote.\n¿Dudas? Llamanos: te atiende una persona."
+            "lines": "Envio gratis a toda España, sin pedido minimo.\nEntrega en 7-10 dias, con numero de seguimiento.\n14 dias para devolverlo, sin explicaciones.\n¿Dudas? Llamanos: te atiende una persona."
           }
         }
       },
@@ -74,14 +74,14 @@
           "type": "item",
           "settings": {
             "icon": "truck",
-            "text": "Envio en 24-48 h, gratis desde 49 €"
+            "text": "Envio gratis a toda España en 7-10 dias"
           }
         },
         "item_4": {
           "type": "item",
           "settings": {
             "icon": "shield",
-            "text": "60 dias de garantia de devolucion"
+            "text": "14 dias para devolverlo"
           }
         }
       },
@@ -268,7 +268,7 @@
           "type": "step",
           "settings": {
             "title": "Dale entre 8 y 12 semanas",
-            "text": "<p>El cuerpo necesita tiempo para reponer reservas. Por eso la garantia es de 60 dias y no de siete.</p>"
+            "text": "<p>El cuerpo necesita tiempo para reponer reservas. La constancia de las primeras semanas es la que marca la diferencia.</p>"
           }
         }
       },
@@ -325,8 +325,8 @@
       "type": "vf-guarantee",
       "settings": {
         "eyebrow": "Sin riesgo para ti",
-        "heading": "60 dias para probarlo. O te devolvemos el dinero.",
-        "text": "<p>Pruebalo dos meses enteros. Si al terminar el bote no notas la diferencia, escribenos un correo y te devolvemos el importe integro. Sin formularios, sin devolver el envase y sin tener que justificarte.</p>",
+        "heading": "14 dias para devolverlo, sin dar explicaciones.",
+        "text": "<p>Tienes 14 dias desde que recibes el pedido para cambiar de opinion. Escribenos un correo y te devolvemos el importe integro: sin formularios, sin cuestionarios y sin tener que justificar nada.</p>",
         "cta_text": "Empezar sin riesgo"
       }
     },
@@ -361,7 +361,7 @@
           "type": "faq",
           "settings": {
             "question": "¿Cuanto tarda en notarse?",
-            "answer": "<p>Depende de cada persona y de tu punto de partida. Lo habitual es notar los primeros cambios en el descanso y la energia entre la tercera y la sexta semana; en piel, pelo y articulaciones suele hacer falta entre 8 y 12 semanas. Por eso la garantia es de 60 dias: para que te de tiempo a juzgarlo con criterio.</p>"
+            "answer": "<p>Depende de cada persona y de tu punto de partida. Lo habitual es notar los primeros cambios en el descanso y la energia entre la tercera y la sexta semana; en piel, pelo y articulaciones suele hacer falta entre 8 y 12 semanas. Nuestro consejo es darle un bote entero antes de sacar conclusiones.</p>"
           }
         },
         "faq_4": {
@@ -382,7 +382,7 @@
           "type": "faq",
           "settings": {
             "question": "¿Cuanto cuesta el envio y cuando me llega?",
-            "answer": "<p>El envio es gratuito a partir de 49 € a toda España peninsular y cuesta 3,95 € por debajo de esa cantidad. Los pedidos hechos antes de las 14:00 de lunes a viernes salen el mismo dia y suelen llegar en 24-48 h. Baleares, Canarias, Ceuta y Melilla tienen plazos y tarifas propias que veras en el carrito.</p>"
+            "answer": "<p>El envio es gratuito a toda España, sin importe minimo de compra. El plazo habitual de entrega es de 7 a 10 dias desde que confirmas el pedido. En cuanto sale del almacen te enviamos un correo con el numero de seguimiento, para que sepas en todo momento donde esta.</p>"
           }
         },
         "faq_7": {
@@ -403,7 +403,7 @@
           "type": "faq",
           "settings": {
             "question": "Si no me convence, ¿que tengo que hacer para devolverlo?",
-            "answer": "<p>Escribirnos un correo. Nada mas. Dispones de 60 dias desde la entrega, aunque hayas abierto el bote y te lo hayas tomado casi entero. Te devolvemos el importe integro y no tienes que dar explicaciones ni rellenar formularios.</p>"
+            "answer": "<p>Escribirnos un correo. Nada mas. Dispones de 14 dias desde que recibes el pedido. Te devolvemos el importe integro y no tienes que dar explicaciones ni rellenar formularios.</p>"
           }
         },
         "faq_10": {

@@ -30,14 +30,14 @@
           "type": "item",
           "settings": {
             "icon": "truck",
-            "text": "Envio en 24-48 h, gratis desde 49 €"
+            "text": "Envio gratis a toda España en 7-10 dias"
           }
         },
         "item_4": {
           "type": "item",
           "settings": {
             "icon": "shield",
-            "text": "60 dias de garantia de devolucion"
+            "text": "14 dias para devolverlo"
           }
         }
       },
