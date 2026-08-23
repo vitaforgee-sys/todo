@@ -1,8 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "ficha": {
       "type": "vf-main-product",
-      "settings": {},
       "blocks": {
         "title_1": {
           "type": "title",
@@ -26,6 +34,7 @@
         },
         "description_4": {
           "type": "description",
+          "name": "Descripción general Equilibrio hormonal: Favorece el equilibrio hormonal femenino con ingredientes n",
           "settings": {}
         },
         "form_5": {
@@ -50,11 +59,11 @@
         "description_4",
         "form_5",
         "reassurance_6"
-      ]
+      ],
+      "settings": {}
     },
     "confianza": {
       "type": "vf-trust-bar",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item",
@@ -90,22 +99,11 @@
         "item_2",
         "item_3",
         "item_4"
-      ]
+      ],
+      "settings": {}
     },
     "composicion": {
       "type": "vf-formula-table",
-      "settings": {
-        "eyebrow": "Transparencia total",
-        "heading": "Que contiene exactamente cada dosis diaria",
-        "subheading": "<p>Sin mezclas propietarias ni cantidades escondidas. Esto es todo lo que tomas cada mañana, con su dosis exacta y para que sirve.</p>",
-        "align": "left",
-        "col_1": "Ingrediente",
-        "col_2": "Por dosis diaria",
-        "col_3": "% VRN",
-        "col_4": "Para que sirve",
-        "note": "<p>VRN: valores de referencia de nutrientes segun el Reglamento (UE) 1169/2011. Dosis diaria: 2 capsulas. Las declaraciones recogidas en esta tabla son las autorizadas por la Union Europea para cada nutriente.</p>",
-        "other_ingredients": "Agente de recubrimiento (hidroxipropilmetilcelulosa, capsula vegetal), antiaglomerante (sales de magnesio de acidos grasos). Sin gluten, sin lactosa, sin azucares añadidos y sin colorantes artificiales."
-      },
       "blocks": {
         "ingredient_1": {
           "type": "ingredient",
@@ -239,16 +237,24 @@
         "ingredient_11",
         "ingredient_12",
         "ingredient_13"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Transparencia total",
+        "heading": "Que contiene exactamente cada dosis diaria",
+        "subheading": "<p>Sin mezclas propietarias ni cantidades escondidas. Esto es todo lo que tomas cada mañana, con su dosis exacta y para que sirve.</p>",
+        "align": "left",
+        "col_1": "Ingrediente",
+        "col_2": "Por dosis diaria",
+        "col_3": "% VRN",
+        "col_4": "Para que sirve",
+        "note": "<p>VRN: valores de referencia de nutrientes segun el Reglamento (UE) 1169/2011. Dosis diaria: 2 capsulas. Las declaraciones recogidas en esta tabla son las autorizadas por la Union Europea para cada nutriente.</p>",
+        "other_ingredients": "Agente de recubrimiento (hidroxipropilmetilcelulosa, capsula vegetal), antiaglomerante (sales de magnesio de acidos grasos). Sin gluten, sin lactosa, sin azucares añadidos y sin colorantes artificiales.",
+        "cta_text": "",
+        "cta_link": ""
+      }
     },
     "modo_empleo": {
       "type": "vf-steps",
-      "settings": {
-        "eyebrow": "Modo de empleo",
-        "heading": "Tan sencillo que no lo olvidaras",
-        "subheading": "<p>Sin horarios imposibles ni cinco botes en la encimera.</p>",
-        "note": "<p>No superar la dosis diaria recomendada. Los complementos alimenticios no deben utilizarse como sustitutos de una dieta equilibrada.</p>"
-      },
       "blocks": {
         "step_1": {
           "type": "step",
@@ -276,42 +282,42 @@
         "step_1",
         "step_2",
         "step_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Modo de empleo",
+        "heading": "Tan sencillo que no lo olvidaras",
+        "subheading": "<p>Sin horarios imposibles ni cinco botes en la encimera.</p>",
+        "note": "<p>No superar la dosis diaria recomendada. Los complementos alimenticios no deben utilizarse como sustitutos de una dieta equilibrada.</p>"
+      }
     },
     "testimonios": {
       "type": "vf-testimonials",
-      "settings": {
-        "eyebrow": "Lo que nos cuentan",
-        "heading": "Mujeres como tu, con nombre y apellido",
-        "subheading": "<p>Opiniones recogidas de clientas que compraron en esta tienda. Publicamos las buenas y tambien las que no lo son tanto.</p>",
-        "show_stars": true
-      },
       "blocks": {
         "quote_1": {
           "type": "quote",
           "settings": {
+            "quote": "<p>Lo que mas he notado es que llego a las siete de la tarde con ganas de algo mas que del sofa. Llevo tres meses y ya no me planteo dejarlo.</p>",
             "name": "Maria Jose",
             "meta": "56 años · Valencia",
-            "verified": true,
-            "quote": "<p>Lo que mas he notado es que llego a las siete de la tarde con ganas de algo mas que del sofa. Llevo tres meses y ya no me planteo dejarlo.</p>"
+            "verified": true
           }
         },
         "quote_2": {
           "type": "quote",
           "settings": {
+            "quote": "<p>Lo empece por las rodillas por la mañana. A la sexta semana me di cuenta de que ya no me acordaba de que me dolian.</p>",
             "name": "Carmen",
             "meta": "61 años · Sevilla",
-            "verified": true,
-            "quote": "<p>Lo empece por las rodillas por la mañana. A la sexta semana me di cuenta de que ya no me acordaba de que me dolian.</p>"
+            "verified": true
           }
         },
         "quote_3": {
           "type": "quote",
           "settings": {
+            "quote": "<p>Agradezco muchisimo que pongan la tabla con las cantidades. Se la enseñe a mi medico de cabecera y me dijo que le parecia bien.</p>",
             "name": "Pilar",
             "meta": "52 años · Bilbao",
-            "verified": true,
-            "quote": "<p>Agradezco muchisimo que pongan la tabla con las cantidades. Se la enseñe a mi medico de cabecera y me dijo que le parecia bien.</p>"
+            "verified": true
           }
         }
       },
@@ -319,7 +325,13 @@
         "quote_1",
         "quote_2",
         "quote_3"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Lo que nos cuentan",
+        "heading": "Mujeres como tu, con nombre y apellido",
+        "subheading": "<p>Opiniones recogidas de clientas que compraron en esta tienda. Publicamos las buenas y tambien las que no lo son tanto.</p>",
+        "show_stars": true
+      }
     },
     "garantia": {
       "type": "vf-guarantee",
@@ -327,21 +339,12 @@
         "eyebrow": "Sin riesgo para ti",
         "heading": "60 dias para probarlo. O te devolvemos el dinero.",
         "text": "<p>Pruebalo dos meses enteros. Si al terminar el bote no notas la diferencia, escribenos un correo y te devolvemos el importe integro. Sin formularios, sin devolver el envase y sin tener que justificarte.</p>",
-        "cta_text": "Empezar sin riesgo"
+        "cta_text": "Empezar sin riesgo",
+        "cta_link": ""
       }
     },
     "faq": {
       "type": "vf-faq",
-      "settings": {
-        "eyebrow": "Resolvemos tus dudas",
-        "heading": "Preguntas frecuentes",
-        "subheading": "<p>Las mismas que nos hacen por telefono cada semana. Si te queda alguna, escribenos: contestamos personas, no robots.</p>",
-        "one_at_a_time": true,
-        "enable_schema": true,
-        "cta_text": "<p>¿Te queda alguna duda?</p>",
-        "cta_label": "Escribenos y te respondemos",
-        "cta_link": "/pages/contacto"
-      },
       "blocks": {
         "faq_1": {
           "type": "faq",
@@ -441,7 +444,17 @@
         "faq_10",
         "faq_11",
         "faq_12"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Resolvemos tus dudas",
+        "heading": "Preguntas frecuentes",
+        "subheading": "<p>Las mismas que nos hacen por telefono cada semana. Si te queda alguna, escribenos: contestamos personas, no robots.</p>",
+        "one_at_a_time": true,
+        "enable_schema": true,
+        "cta_text": "<p>¿Te queda alguna duda?</p>",
+        "cta_label": "Escribenos y te respondemos",
+        "cta_link": "/pages/contacto"
+      }
     }
   },
   "order": [
